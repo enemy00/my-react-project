@@ -1,0 +1,48 @@
+
+.alwaysProfileBlock img {
+    max-width: 1000px;
+    height: 200px;
+}
+
+
+textarea {
+    display: block;
+}
+
+.posts img {
+    max-width: 50px;
+    height: 50px;
+}
+
+.matchedBlock {
+    margin: 10px
+}
+
+
+.profilePhoto {
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.profileInfo {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.status {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.contacts  {
+    padding: 2px;
+    margin-left: 10px;
+}
+
+.date {
+    float: right;
+    font-weight: bold;
+    position: absolute;
+    right: 230px;
+    top: 60px;
+}

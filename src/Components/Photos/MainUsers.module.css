@@ -1,0 +1,50 @@
+.usersContainer {
+    padding: 10px;
+}
+
+.usersInfo {
+    display: grid;
+    grid-template-rows: 200px;
+    grid-template-columns: 300px 300px;
+}
+
+.headContainer {
+    text-align: center;
+    display: inline-block;
+    margin-left: 500px;
+}
+.infoContainer {
+    margin-left: 30px;
+    border: 1px double black;
+    display: inline-block;
+    width: 600px;
+    height: 155px;
+    position: absolute;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.info {
+    font-weight: bold;
+}
+
+.someInfo {
+    margin-top: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.address {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.container img {
+    margin: 10px;
+    padding: 10px;
+    max-width: 150px;
+}
+
+.container {
+    display: inline;
+}

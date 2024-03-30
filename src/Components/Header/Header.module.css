@@ -1,0 +1,28 @@
+.logo {
+    max-width: 50px;
+    max-height: 30px;
+    mix-blend-mode: multiply;
+}
+
+header {
+    background-color: bisque;
+    grid-area: h;
+    padding: 10px;
+
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+.link {
+    float: right
+}
+
+.link a {
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+}
+

@@ -1,0 +1,14 @@
+img {
+    max-width: 150px;
+}
+
+.selectedPage {
+    color: whitesmoke;
+}
+.headContainer {
+    display: inline-block;
+    margin-left: 500px;
+}
+.container {
+    margin-left: 20px;
+}

@@ -1,0 +1,76 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+
+.dialogsItems a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    margin: 10px;
+}
+
+.dialogs .dialogsItems {
+    margin: 30px;
+    display: inline-block;
+    width: 300px;
+    height: 600px;
+    padding-left: 10px;
+    border: 1px double black;
+
+}
+
+.dialogs .messages {
+    margin: 30px;
+    display: inline-block;
+    border: 1px double black;
+    width: 800px;
+    height: 600px;
+    padding-left: 10px;
+}
+
+.headDialog {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dialogs img {
+    max-width: 50px;
+    border: 1px double black;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.messagesPosition {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.messages textarea {
+    position: absolute;
+    top: 630px;
+    right: 420px;
+    resize: none;
+}
+
+.textPosition {
+    position: absolute;
+    bottom: 470px;
+    right: 540px;
+    font-size: 20px;
+}
+
+.headContainer {
+    display: inline-block;
+    margin-left: 550px;
+}
+
+.button {
+    position: absolute;
+    top: 675px;
+    right: 420px;
+}

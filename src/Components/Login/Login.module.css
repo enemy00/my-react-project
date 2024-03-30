@@ -1,0 +1,52 @@
+hr {
+    display: inline-block;
+    max-width: 200px;
+}
+
+.loginForm {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.formBox {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    margin-left: 360px;
+    background: navajowhite;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.buttonBox {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px brown;
+    border-radius: 30px;
+}
+
+.sendButton {
+    padding: 10px 30px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: floralwhite;
+    margin-left: 50px;
+}
+
+.button {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: darkcyan;
+    border-radius: 30px;
+    transition: 0.5s;
+}

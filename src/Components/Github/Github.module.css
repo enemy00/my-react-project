@@ -1,0 +1,125 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 10px;
+}
+
+hr {
+    display: inline-block;
+    max-width: 200px;
+}
+
+.selected {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: wheat;
+    margin-top: 5px;
+    width: 150px;
+    height: 15px;
+}
+
+.login {
+    float: right;
+    display: inline-block;
+    width: 200px;
+    height: 70px;
+    border: 2px solid black;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding: 3px;
+}
+
+.login a {
+    text-decoration: none;
+    color: floralwhite;
+}
+
+.usersContainer {
+    display: inline-block;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 30px;
+
+}
+
+.usersContainer li {
+    list-style: none;
+    padding: 8px;
+}
+
+.container img {
+    max-width: 200px;
+    border: 1px double black;
+    border-radius: 20px;
+}
+
+.headContainer {
+    text-align: center;
+    display: inline-block;
+    margin-left: 250px;
+}
+
+.headContainer div {
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.githubInfo {
+    display: inline-block;
+    width: 1200px;
+    margin-left: 10px;
+}
+
+.githubInfo img {
+    float: right;
+    margin-left: 5px;
+}
+
+.loginForm {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.formBox {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    margin-left: 360px;
+    background: navajowhite;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.buttonBox {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px brown;
+    border-radius: 30px;
+}
+
+.sendButton {
+    padding: 10px 30px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: floralwhite;
+    margin-left: 50px;
+}
+
+.button {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: darkcyan;
+    border-radius: 30px;
+    transition: 0.5s;
+}
