@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/my-react-project/static/css/main.1e987f66.css",
+    "main.js": "/my-react-project/static/js/main.f0630a9d.js",
+    "static/js/453.48114f3e.chunk.js": "/my-react-project/static/js/453.48114f3e.chunk.js",
+    "static/css/122.c4bfa63d.chunk.css": "/my-react-project/static/css/122.c4bfa63d.chunk.css",
+    "static/js/122.25fb7198.chunk.js": "/my-react-project/static/js/122.25fb7198.chunk.js",
+    "static/js/378.2c195fcb.chunk.js": "/my-react-project/static/js/378.2c195fcb.chunk.js",
+    "static/media/sw.mp4": "/my-react-project/static/media/sw.b8afdac05448e8dde3aa.mp4",
+    "static/media/loading.gif": "/my-react-project/static/media/loading.ad2284cf79bfc931d8d4.gif",
+    "static/media/movie.jpg": "/my-react-project/static/media/movie.9fdfb1a35b8c706c67ad.jpg",
+    "static/media/userss.png": "/my-react-project/static/media/userss.be2959bfcfaeee682f4f.png",
+    "static/media/github.jpg": "/my-react-project/static/media/github.76b165fbc11b5c917754.jpg",
+    "static/media/tg.png": "/my-react-project/static/media/tg.0c896215258bda132c5c.png",
+    "static/media/user.jpg": "/my-react-project/static/media/user.75fc632492795d2e8515.jpg",
+    "static/media/users.png": "/my-react-project/static/media/users.9de7081025cee4e0b645.png",
+    "static/media/youtube.png": "/my-react-project/static/media/youtube.edbd357dd20549dcd9a4.png",
+    "static/media/enemy00logo.jpg": "/my-react-project/static/media/enemy00logo.6dda91d5a7dc10a48146.jpg",
+    "static/media/vk.png": "/my-react-project/static/media/vk.4b1851009ff38779ff52.png",
+    "index.html": "/my-react-project/index.html",
+    "main.1e987f66.css.map": "/my-react-project/static/css/main.1e987f66.css.map",
+    "main.f0630a9d.js.map": "/my-react-project/static/js/main.f0630a9d.js.map",
+    "453.48114f3e.chunk.js.map": "/my-react-project/static/js/453.48114f3e.chunk.js.map",
+    "122.c4bfa63d.chunk.css.map": "/my-react-project/static/css/122.c4bfa63d.chunk.css.map",
+    "122.25fb7198.chunk.js.map": "/my-react-project/static/js/122.25fb7198.chunk.js.map",
+    "378.2c195fcb.chunk.js.map": "/my-react-project/static/js/378.2c195fcb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e987f66.css",
+    "static/js/main.f0630a9d.js"
+  ]
+}
