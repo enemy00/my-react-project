@@ -51,7 +51,7 @@ const Footer: React.FC<MapStatePropsType> = (props) => {
                 <p>Phone: +000</p>
             </div>
             <div className={s.followUs}>
-                <h3>Follow Us</h3>
+                <h3>My socials</h3>
                 <div className={s.socials}>
                     <ul>
                         <li><NavLink to={`/socials/telegram/${props.userId}`}>
