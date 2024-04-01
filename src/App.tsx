@@ -2,9 +2,7 @@ import * as React from "react";
 import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import UsersContainer from "./Components/Users/UsersContainer";
 import Login from "./Components/Login/Login";
-import HeaderContainer from "./Components/Header/HeaderContainer";
 import Movies from "./Components/Movies/Movies";
 import Footer from "./Footer/Footer";
 import {compose} from "redux";
@@ -22,6 +20,8 @@ import {lazy} from "react";
 import {withSuspense} from "./hocs/withSuspense";
 import WatchItems from "./Components/Movies/WatchItems";
 import PhUsersContainer from "./Components/PhItems/PhUsersContainer";
+import UsersContainerWithHooks from "./Components/Users/UsersContainerWithHooks";
+import HeaderContainerWithHooks from "./Components/Header/HeaderContainerWithHooks";
 
 type MapStatePropsType = {
     initialized: boolean
@@ -31,7 +31,7 @@ type MapDispatchPropsType = {
     initializeApp: () => void
 }
 
-const ProfileContainer = lazy(() => import("./Components/Profile/ProfileContainer"))
+const ProfileContainer = lazy(() => import("./Components/Profile/ProfileContainerWithHooks"))
 const DialogsContainer = lazy(() => import("./Components/Dialogs/DialogsContainer"))
 
 const SuspendedProfile = withSuspense(ProfileContainer)
@@ -49,7 +49,7 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType & Wit
         }
         return (
             <div className="app">
-                <HeaderContainer/>
+                <HeaderContainerWithHooks/>
                 <Navbar/>
                 <div className="app-content">
                     <Routes>
@@ -58,7 +58,7 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType & Wit
                         <Route path="/dialogs" element={<SuspendedDialogs/>}/>
                         <Route path="/dialogs/convo/:userId?" element={<Conversations/>}/>
                         <Route path="/login" element={<Login/>}/>
-                        <Route path="/users" element={<UsersContainer/>}/>
+                        <Route path="/users" element={<UsersContainerWithHooks/>}/>
                         <Route path="/phUsers" element={<PhUsersContainer/>}/>
                         <Route path="/watch" element={<WatchItems/>}/>
                         <Route path="/watch/movies/:movieId?" element={<Movies/>}/>
