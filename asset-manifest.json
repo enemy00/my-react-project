@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/my-react-project/static/css/main.a5083bd2.css",
-    "main.js": "/my-react-project/static/js/main.c4c83179.js",
+    "main.css": "/my-react-project/static/css/main.fedbb7e3.css",
+    "main.js": "/my-react-project/static/js/main.33c300ba.js",
     "static/js/453.48114f3e.chunk.js": "/my-react-project/static/js/453.48114f3e.chunk.js",
-    "static/css/122.9d49d8ac.chunk.css": "/my-react-project/static/css/122.9d49d8ac.chunk.css",
+    "static/css/122.63e112bf.chunk.css": "/my-react-project/static/css/122.63e112bf.chunk.css",
     "static/js/122.5397f31c.chunk.js": "/my-react-project/static/js/122.5397f31c.chunk.js",
     "static/js/378.62ed825e.chunk.js": "/my-react-project/static/js/378.62ed825e.chunk.js",
     "static/media/sw.mp4": "/my-react-project/static/media/sw.b8afdac05448e8dde3aa.mp4",
@@ -25,15 +25,15 @@
     "static/media/user.jpg": "/my-react-project/static/media/user.75fc632492795d2e8515.jpg",
     "static/media/users.png": "/my-react-project/static/media/users.9de7081025cee4e0b645.png",
     "index.html": "/my-react-project/index.html",
-    "main.a5083bd2.css.map": "/my-react-project/static/css/main.a5083bd2.css.map",
-    "main.c4c83179.js.map": "/my-react-project/static/js/main.c4c83179.js.map",
+    "main.fedbb7e3.css.map": "/my-react-project/static/css/main.fedbb7e3.css.map",
+    "main.33c300ba.js.map": "/my-react-project/static/js/main.33c300ba.js.map",
     "453.48114f3e.chunk.js.map": "/my-react-project/static/js/453.48114f3e.chunk.js.map",
-    "122.9d49d8ac.chunk.css.map": "/my-react-project/static/css/122.9d49d8ac.chunk.css.map",
+    "122.63e112bf.chunk.css.map": "/my-react-project/static/css/122.63e112bf.chunk.css.map",
     "122.5397f31c.chunk.js.map": "/my-react-project/static/js/122.5397f31c.chunk.js.map",
     "378.62ed825e.chunk.js.map": "/my-react-project/static/js/378.62ed825e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5083bd2.css",
-    "static/js/main.c4c83179.js"
+    "static/css/main.fedbb7e3.css",
+    "static/js/main.33c300ba.js"
   ]
 }
