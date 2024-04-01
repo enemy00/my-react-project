@@ -23,18 +23,17 @@ img {
 .pagination a:hover {
     background-color: #f0f0f0;
 }
+
 .userList {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
+
 .userList li {
     display: inline-block;
 }
 
-.userList li:last-child {
-    border-bottom: 1px solid black;
-}
 
 .users img {
     max-width: 150px;

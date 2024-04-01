@@ -6,7 +6,6 @@ const ADD_USERS = "ADD_USERS"
 const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
 const PICKED_CURRENT_PAGE = "PICKED_CURRENT_PAGE"
-const USERS_COUNT = "USERS_COUNT"
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING"
 
 export type UsersType = {
@@ -18,7 +17,7 @@ export type UsersType = {
 }
 const initial = {
     users: [] as Array<UsersType>,
-    usersQuantity: 50,
+    usersQuantity: 80,
     pageSize: 5,
     currentPage: 1,
     isFetching: false,
@@ -79,7 +78,7 @@ export const actions = {
     pickedCurrentPageAC: (page: number) => ({type: PICKED_CURRENT_PAGE, page} as const),
 }
 
-export const getUsersTC = (currentPage: number, pageSize: number): ThunkType => async(dispatch) => {
+export const getUsersTC = (currentPage: number, pageSize: number): ThunkType => async (dispatch) => {
     dispatch(actions.toggleIsFetchingAC(true))
     usersAPI.getUsers(currentPage, pageSize)
         .then(data => {

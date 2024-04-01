@@ -41,7 +41,7 @@ const Profile: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
             <HeadProfileBlock isOwner={props.isOwner}/>
             <div className={s.matchedBlock}>
                 <div>
-                    <img className={s.profilePhoto} alt="profile photo" src={profileImage || profileAva}/>
+                    <img className={s.profilePhoto} alt="profile photo" src={props.profile.photos.small || profileAva || profileImage}/>
                     {props.isOwner ? <input onChange={(e) => {
                             if (e.target.files && e.target.files.length) {
                                 setProfileImage(URL.createObjectURL(e.target.files[0]));

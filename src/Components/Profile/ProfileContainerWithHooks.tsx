@@ -23,9 +23,9 @@ type MapDispatchPropsType = {
     saveProfile: (profile: ProfileType) => Promise<any>
 }
 const ProfileContainerWithHooks: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProps> = (props) => {
-
-    useEffect(() => {
-        let userId: number | null = +props.params.userId;
+    let userId: number | null;
+    const refreshProfile = () => {
+        userId = +props.params.userId;
         if (!userId) {
             userId = props.authorizedUserId;
             if (!userId)
@@ -37,23 +37,16 @@ const ProfileContainerWithHooks: React.FC<MapStatePropsType & MapDispatchPropsTy
             props.getUserProfile(userId)
             props.getUserProfileStatus(userId)
         }
+    }
 
+    useEffect(() => {
+        userId = +props.params.userId;
+        refreshProfile()
     }, [])
 
     useEffect(() => {
-        let userId: number | null = +props.params.userId;
-        if (!userId) {
-            userId = props.authorizedUserId;
-            if (!userId)
-                props.navigate("/login")
-        }
-        if (!userId) {
-            console.error('Id should be exist')
-        } else {
-            props.getUserProfile(userId)
-            props.getUserProfileStatus(userId)
-        }
-
+        userId = +props.params.userId;
+        refreshProfile()
     }, [props.params.userId]);
 
     return <Profile profile={props.profile}
