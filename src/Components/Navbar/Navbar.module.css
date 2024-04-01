@@ -21,9 +21,10 @@
 
 
 .appNav li img {
-    max-width: 30px;
-    max-height: 30px;
-    mix-blend-mode: multiply;
+    max-width: 40px;
+    max-height: 40px;
+    border: 1px solid black;
+    border-radius: 30px;
 }
 
 .appNav a {
