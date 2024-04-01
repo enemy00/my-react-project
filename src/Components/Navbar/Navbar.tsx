@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
     return (
         <div className={s.appNav}>
-            <ul>dsasdasd
+            <ul>
                 <div>
                     <li>
                         <img src={profileIcon} alt="profile-icon"/><NavLink to="/profile">Profile</NavLink>
