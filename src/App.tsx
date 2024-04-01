@@ -11,10 +11,9 @@ import {compose} from "redux";
 import {connect, Provider} from "react-redux";
 import LoadingBlock from "./Components/Preloader/Preloader";
 import {withRouter, WithRouterProps} from "./hocs/withRouter";
-import PostsContainer from "./Components/Photos/PostsContainer";
-import Posts from "./Components/Photos/Posts";
+import PostsContainer from "./Components/PhItems/PostsContainer";
+import Posts from "./Components/PhItems/Posts";
 import {initializeApp} from "./redux/appReducer";
-import MainUsersContainer from "./Components/Photos/MainUsersContainer";
 import Conversations from "./Components/Dialogs/Convo";
 import {AppStateType, store} from "./redux/redux-store";
 import Github from "./Components/Github/Github";
@@ -22,6 +21,7 @@ import GithubLogin from "./Components/Github/GithubLogin";
 import {lazy} from "react";
 import {withSuspense} from "./hocs/withSuspense";
 import WatchItems from "./Components/Movies/WatchItems";
+import PhUsersContainer from "./Components/PhItems/PhUsersContainer";
 
 type MapStatePropsType = {
     initialized: boolean
@@ -59,7 +59,7 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType & Wit
                         <Route path="/dialogs/convo/:userId?" element={<Conversations/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/users" element={<UsersContainer/>}/>
-                        <Route path="/phUsers" element={<MainUsersContainer/>}/>
+                        <Route path="/phUsers" element={<PhUsersContainer/>}/>
                         <Route path="/watch" element={<WatchItems/>}/>
                         <Route path="/watch/movies/:movieId?" element={<Movies/>}/>
                         <Route path="/phUsers/posts/:postId?" element={<PostsContainer/>}/>

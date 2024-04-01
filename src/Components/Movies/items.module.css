@@ -1,8 +1,8 @@
 .attention {
     display: inline-block;
     margin-top: 40px;
-    color: tan;
-    font-weight: lighter;
+    color: #333;
+    font-weight: bold;
 }
 
 .container span {
@@ -127,6 +127,8 @@
 }
 
 .comments img {
+    border: 1px double black;
+    border-radius: 30px;
     max-width: 60px;
     margin-top: 10px;
 }
@@ -136,20 +138,19 @@
     margin-top: 50px;
     margin-left: 30px;
 }
+
 .comment {
-    border: 2px solid #333; /* Цвет границы */
-    border-radius: 10px; /* Скругление углов */
+    border: 2px solid #333;
+    border-radius: 10px;
     padding: 15px;
     margin-bottom: 15px;
     background-color: #f5f5f5;
-
 }
 
-.comment span {
-    color: #333;
-    font-weight: 500;
+.commentLike {
+    display: inline-block;
+    width: 100px;
 }
-
 
 .imageAndLikes {
     display: flex;
@@ -160,6 +161,7 @@
 .likes {
     color: darkred;
 }
+
 .likes img {
     max-width: 30px;
     max-height: 30px;
@@ -202,9 +204,9 @@
     width: 400px;
     height: 370px;
     margin-top: 20px;
-    border: 2px solid #333; /* Цвет границы */
-    border-radius: 10px; /* Скругление углов */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .imageAndLikes img {
@@ -212,24 +214,17 @@
     margin-right: 20px
 }
 
-.serialsContainer {
-    margin: 10px;
-}
 
 .watchContainer span {
-    font-weight: bold; /* Жирное начертание */
-    color: #333; /* Цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    background-color: darkgray; /* Цвет фона */
-    padding: 2px 10px; /* Внутренний отступ */
-    border-radius: 5px; /* Скругление углов */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень */
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    background-color: darkgray;
+    padding: 2px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-
-.image {
-    padding: 5px;
-}
 
 .movie h3 {
     margin-left: 10px;

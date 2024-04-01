@@ -1,8 +1,8 @@
 .footer {
     grid-area: f;
     box-shadow:  0 2px 5px rgba(0, 0, 0, 0.5);
-    color: #fff; /* Цвет текста */
-    padding: 20px 0; /* Поля внутри footer */
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -86,15 +86,8 @@
 }
 
 .menu ul a {
-    color: red;
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 0 10px; /* Отступы вокруг ссылок */
-    transition: color 0.3s ease;
+    text-decoration: none;
+    padding: 0 10px;
 }
-
-.menu ul a:hover {
-    color: #ccc;
-}
-
 
 

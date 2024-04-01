@@ -15,7 +15,7 @@ import likesIcon from "../../pictures/likesicon.png";
 const Video = () => {
     return (
         <div className={s.videoBlock}>
-            <video className={s.movieVideo} src={sw} width={700} height={400} controls={true}
+            <video src={sw} width={700} height={400} controls={true}
                    autoPlay={false}/>
         </div>
 

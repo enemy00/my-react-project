@@ -14,16 +14,16 @@
 
 
 .app-content {
-    background-color: lightgray; /* Цвет фона */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: lightgray;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .app-content h2 {
-    color: #333; /* Цвет текста */
+    color: #333;
 }
 
 .app-content p {
-    line-height: 1.6; /* Межстрочный интервал */
-    color: #555; /* Цвет текста */
-    margin-bottom: 20px; /* Отступ снизу */
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
 }

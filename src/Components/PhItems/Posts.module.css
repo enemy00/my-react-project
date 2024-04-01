@@ -1,0 +1,95 @@
+.postsContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.postsContainer {
+    border: 2px solid #4E37B2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mainContainer h2 {
+    text-align: center;
+    display: inline-block;
+    margin-left: 500px;
+
+}
+
+.container {
+    padding: 10px;
+}
+
+.postsContainer:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.postTitle {
+    width: 700px;
+    height: 50px;
+    margin: 0 auto;
+    border: 1px double black;
+    text-align: center;
+}
+
+.post {
+    border: 1px double black;
+    display: block;
+    width: 700px;
+    margin: 0 auto;
+    height: 100px;
+    text-align: center;
+    color: #666;
+}
+
+.postButton {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: dimgrey;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.postContainer {
+    display: inline-block;
+    width: 1000px;
+    border: 2px solid #4E37B2;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    line-height: 1.5;
+    color: #333;
+}
+
+.postContainer span {
+    float: right;
+    color: navy;
+}
+
+.commentAuthor {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.postContainer:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+

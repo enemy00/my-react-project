@@ -6,22 +6,22 @@
     display: flex;
     height: 100px;
     align-items: center;
-    border: 2px solid #4E37B2; /* Цвет границы */
-    border-radius: 10px; /* Скругление углов */
-    padding: 20px; /* Внутренний отступ */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
-    background-color: #fff; /* Цвет фона */
+    border: 2px solid #4E37B2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     transition: transform 0.3s;
 }
 
 .userContainer:hover {
-    transform: translateY(-5px); /* Немного поднимаем карточку */
+    transform: translateY(-5px);
 }
 
 .userAvatar {
     max-width: 100px;
     max-height: 100px;
-    border-radius: 50%; /* Круглое изображение */
+    border-radius: 50%;
     margin-right: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 }

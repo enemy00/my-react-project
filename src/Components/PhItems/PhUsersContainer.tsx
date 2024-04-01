@@ -1,9 +1,9 @@
 import * as React from "react";
 import {connect} from "react-redux";
 import {getUsers, UserType} from "../../redux/resourcesReducer";
-import MainUsers from "./MainUsers";
 import {useEffect} from "react";
 import {AppStateType} from "../../redux/redux-store";
+import PhUsers from "./PhUsers";
 
 type MapStatePropsType = {
     users: Array<UserType>
@@ -12,16 +12,16 @@ type MapStatePropsType = {
 type MapDispatchPropsType = {
     getUsers: () => void
 }
-const MainUsersContainer: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
+const PhUsersContainer: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     useEffect(() => {
         props.getUsers()
     }, []);
 
-    return <MainUsers {...props} />
+    return <PhUsers {...props} />
 }
 
 
 const mapState = (state: AppStateType) => ({
     users: state.resources.users,
 })
-export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapState, {getUsers})(MainUsersContainer);
+export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapState, {getUsers})(PhUsersContainer);

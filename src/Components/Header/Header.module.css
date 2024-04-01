@@ -13,11 +13,6 @@
     mix-blend-mode: multiply;
 }
 
-.logo {
-    max-width: 50px;
-    max-height: 50px;
-    mix-blend-mode: multiply;
-}
 
 .fLetter {
     color: mediumblue;
@@ -29,8 +24,8 @@
 
 .headerContainer span {
     font-size: 20px;
-    color: darkkhaki; /* Цвет текста */
-    letter-spacing: 10px; /* Межбуквенный интервал */
+    color: darkkhaki;
+    letter-spacing: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
@@ -71,7 +66,7 @@ header a {
 .btn {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #4E37B2; /* Основной цвет фона */
+    background-color: #4E37B2;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
@@ -82,9 +77,9 @@ header a {
 }
 
 .btn:hover {
-    background-color: #00C6FF; /* Цвет фона при наведении */
-    transform: translateY(-2px); /* Эффект подъема при наведении */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+    background-color: #00C6FF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 

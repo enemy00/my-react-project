@@ -1,3 +1,4 @@
+/*
 import profileReducer from "./profileReducer";
 import dialogsReducer from "./dialogsReducer";
 import navbarReducer from "./navbarReducer";
@@ -55,34 +56,7 @@ const store = {
     }
 
 
-   /* sentMessage(text) {
-        let newMessage = {
-            id: 4,
-            message: text
-        }
-        this._state.dialogsPage.messages.push(newMessage);
-    },
-
-    updatedMessage(text) {
-        this._state.dialogsPage.newDialogMessage = text;
-    },*/
-
-    // _addPost() {
-    //     let newPost = {
-    //         id: 3,
-    //         message: this._state.profilePage.newPostText,
-    //         likesCount: 4
-    //     }
-    //     this._state.profilePage.posts.push(newPost)
-    //     this._callSubscriber(this._state);
-    // },
-    // _postMessageChanged(newText) {
-    //     this._state.profilePage.newPostText = newText;
-    //     this._callSubscriber(this._state); /*когда же ф-ю rerenderEntireTree кто то вызывает из вне, мы уже передаем
-    // локальный state и используем его и он приходит в ф-ю rerenderEntireTree*/
-    // },
-
 }
 
 window.store = store;
-export default store;
+export default store;*/

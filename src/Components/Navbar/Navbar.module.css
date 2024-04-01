@@ -1,20 +1,20 @@
 .appNav {
-    background-color: #333; /* Цвет фона */
-    width: 100%; /* Растягиваем по ширине экрана */
-    top: 0; /* Прижимаем к верху страницы */
-    z-index: 1000; /* Устанавливаем высокий индекс для перекрытия других элементов */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
+    background-color: #333;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     grid-area: n;
 }
 
 
 .appNav ul {
-    list-style-type: none; /* Убираем маркеры списка */
+    list-style-type: none;
     display: inline-block;
 }
 
 .appNav li {
-    display: inline-block; /* Сделаем элементы списка в одну линию */
+    display: inline-block;
     width: 150px;
     padding: 10px;
 }
@@ -30,9 +30,9 @@
 .appNav a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.5s; /* Плавное изменение цвета при наведении */
+    transition: color 0.5s;
 }
 
 .appNav a:hover {
-    color: #ffcc00; /* Цвет ссылки при наведении */
+    color: #ffcc00;
 }

@@ -17,7 +17,6 @@ type MapDispatchPropsType = {
 }
 const WatchItems: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleState, getPeopleState}) => {
 
-    /* const [itemsClick, setItemsClick] = useState(false)*/
     const [selectedMood, setSelectedMood] = useState("")
 
     useEffect(() => {
@@ -38,17 +37,6 @@ const WatchItems: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleS
             </NavLink>
         </div>
     })
-
-    /*    const serialsElements = serials.map(sr => {
-            return <div className={s.matched}>
-                <div>Serial name: {sr.serialName}</div>
-                <NavLink to={`/watch/serials/${sr.serialId}`}>
-                    <img src={sr.serialImage} className={s.item} alt="Image"/>
-                </NavLink>
-            </div>
-
-        })*/
-
 
     return (
         <div className={s.container}>
@@ -76,18 +64,7 @@ const WatchItems: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleS
                 <div className={s.moviesELem}>
                     {moviesElements}
                 </div>
-                {/*  {serialsElements}*/}
             </div>
-            {/*{!itemsClick
-                ? <div className={s.watchingContainer}>
-                    {moviesElements}
-                </div>
-                : <Movies movies={movies} {...props} />}
-            {!itemsClick
-                ? <div className={s.watchingContainer}>
-                    {serialsElements}
-                </div>
-                : <Serials serials={serials} {...props} />}*/}
         </div>
     )
 }

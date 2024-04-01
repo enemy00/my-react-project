@@ -1,5 +1,5 @@
 import * as React from "react";
-import s from "./MainUsers.module.css";
+import s from "./PhUsers.module.css";
 import users from "../../pictures/userss.png";
 import {NavLink} from "react-router-dom";
 import {UserType} from "../../redux/resourcesReducer";
@@ -9,7 +9,7 @@ type PropsType = {
     users: Array<UserType>
     getUsers: () => void
 }
-const MainUsers: React.FC<PropsType> = (props) => {
+const PhUsers: React.FC<PropsType> = (props) => {
 
     return <>
         <h2 className={s.headContainer}>PlaceholderAPI users</h2>
@@ -43,4 +43,4 @@ const MainUsers: React.FC<PropsType> = (props) => {
     </>
 }
 
-export default MainUsers;
+export default PhUsers;

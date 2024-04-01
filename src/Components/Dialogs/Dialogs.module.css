@@ -33,7 +33,7 @@
 .dialogs .messages {
     margin: 30px;
     display: inline-block;
-    border: 1px double black;
+    border-left: 1px double black;
     border-top: none;
     border-bottom: none;
     border-right: none;
