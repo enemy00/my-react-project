@@ -40,7 +40,6 @@ const ProfileContainerWithHooks: React.FC<MapStatePropsType & MapDispatchPropsTy
     }
 
     useEffect(() => {
-        userId = +props.params.userId;
         refreshProfile()
     }, [])
 
