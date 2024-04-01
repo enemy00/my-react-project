@@ -34,8 +34,11 @@ export type ProfileType = {
 }
 const initial = {
     posts: [
-        {id: 1, message: "hey!", likesCount: 0},
-        {id: 2, message: "yo!", likesCount: 1}
+        {id: 1, message: "Hey!", likesCount: 5},
+        {id: 2, message: "I'm making the breakfast", likesCount: 10},
+        {id: 3, message: "YOyoyo!", likesCount: 20},
+        {id: 4, message: "I'm sitting at my computer", likesCount: 12},
+        {id: 5, message: "Who wants to go for a walk?", likesCount: 30}
     ] as Array<PostsType>,
     newPostText: "",
     profile: null as ProfileType | null,
