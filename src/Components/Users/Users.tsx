@@ -25,7 +25,7 @@ const Users: React.FC<PropsType> = (props) => {
     return <>
         <h2 className={s.headContainer}>SamuraiAPI users</h2>
         <div className={s.container}>
-            <div>
+            <div className={s.pagination}>
                 {pages.map(p => {
                         return <span onClick={() => {
                             props.changedPage(p)
@@ -34,7 +34,7 @@ const Users: React.FC<PropsType> = (props) => {
                 )}
             </div>
             {
-                props.users.map(u => <div key={u.id}>
+                props.users.map(u => <div className={s.users} key={u.id}>
                         <NavLink to={"/profile/" + u.id}>
                             <img src={u.photos.small ? u.photos.small : usersPhoto} alt="user photo"/>
                         </NavLink>
@@ -50,14 +50,12 @@ const Users: React.FC<PropsType> = (props) => {
                                 }>Follow</button>
                             }
                         </div>
-                        <div>
+                        <ul className={s.userList}>
+                            <li>{u.name} and id is {u.id}</li>
                             <div>
-                                <span>{u.name}</span> and id is {u.id}
+                                <li>{u.status || "There is no status yet"}</li>
                             </div>
-                            <div>
-                                <span>{u.status}</span>
-                            </div>
-                        </div>
+                        </ul>
                     </div>
                 )
             }

@@ -2,8 +2,6 @@ import * as React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {
-    actions,
-    getPhoto,
     getUserProfile,
     getUserProfileStatus, ProfileType, saveProfile, updateUserStatus,
 } from "../../redux/profileReducer";
@@ -18,14 +16,11 @@ type MapStatePropsType = {
     statusText: string
     authorizedUserId: number
     profile: ProfileType
-    photo: File
-
 }
 type MapDispatchPropsType = {
     getUserProfile: (userId: number) => void
     getUserProfileStatus: (userId: number) => void
     updateUserStatus: (status: string) => void
-    getPhoto: (file: File) => void
     saveProfile: (profile: ProfileType) => Promise<any>
 }
 
@@ -54,7 +49,7 @@ class ProfileContainer extends React.Component<PropsType> {
         this.refreshProfile()
     }
 
-    componentDidUpdate(prevProps: PropsType , prevState: PropsType) {
+    componentDidUpdate(prevProps: PropsType, prevState: PropsType) {
         if (prevProps.params.userId !== this.props.params.userId)
             this.refreshProfile()
     }
@@ -64,10 +59,7 @@ class ProfileContainer extends React.Component<PropsType> {
                         updateUserStatus={this.props.updateUserStatus}
                         statusText={this.props.statusText}
                         isOwner={!this.props.params.userId}
-                        getPhoto={this.props.getPhoto}
                         saveProfile={this.props.saveProfile}
-                        photo={this.props.photo}
-
         />
     }
 
@@ -77,8 +69,6 @@ let mapStateToProps = (state: AppStateType) => ({
     profile: getProfile(state),
     statusText: getStatusText(state),
     authorizedUserId: state.auth.userId,
-    photo: state.profilePage.photo,
-
 })
 
 export default compose<React.ComponentType>(
@@ -86,5 +76,5 @@ export default compose<React.ComponentType>(
     withAuthRedirect,
     connect(mapStateToProps, {
         getUserProfile,
-        getUserProfileStatus, actions, getPhoto, saveProfile, updateUserStatus
+        getUserProfileStatus, saveProfile, updateUserStatus
     }))(ProfileContainer)

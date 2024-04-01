@@ -5,10 +5,40 @@ img {
 .selectedPage {
     color: whitesmoke;
 }
+
 .headContainer {
-    display: inline-block;
-    margin-left: 500px;
+    text-align: center;
 }
+
 .container {
     margin-left: 20px;
 }
+
+.pagination {
+    display: flex; /* Отображаем пагинацию как гибкую (flex) контейнер */
+    justify-content: center; /* Выравниваем элементы по центру */
+    margin: 20px 0; /* Внешний отступ */
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0; /* Фон ссылки при наведении */
+}
+.userList {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+.userList li {
+    display: inline-block;
+}
+
+.userList li:last-child {
+    border-bottom: 1px solid black; /* Убираем границу у последнего элемента списка */
+}
+
+.users img {
+    max-width: 150px;
+    max-height: 150px;
+    mix-blend-mode: darken;
+}
+

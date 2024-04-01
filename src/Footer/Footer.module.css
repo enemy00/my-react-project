@@ -1,36 +1,70 @@
 .footer {
-    background-color: lightblue;
     grid-area: f;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.5);
+    color: #fff; /* Цвет текста */
+    padding: 20px 0; /* Поля внутри footer */
+    text-align: center;
 }
 
 .socials img {
     max-width: 70px;
-    max-height: 100px;
-    margin-left: 100px
+    max-height: 40px;
+    mix-blend-mode: darken;
 }
 
 
 .socials ul li {
     list-style: none;
     display: inline-block;
-    width: 300px;
+    width: 200px;
     height: 60px;
     text-align: center;
+}
 
+.footerBlock {
+    display: flex;
+    justify-content: flex-start;
+    color: #333;
+}
+
+.contactUs {
+    display: inline-block;
+    width: 400px;
+    height: 150px;
+}
+
+.followUs {
+    display: inline-block;
+    margin-left: 400px;
+
+}
+.followUs h3 {
+    margin-bottom: 20px;
+}
+
+
+.footerBlock h3 {
+    margin-bottom: 20px;
+}
+
+.footerBlock p {
+    margin-bottom: 10px;
 }
 
 .socials ul {
-    display: grid;
-    grid-template-columns: 470px 470px 470px;
-    grid-template-rows: 60px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .menuContainer {
+    color: black;
+    font-weight: lighter;
     text-align: center;
     margin-top: 10px;
     font-style: oblique;
     font-size: larger;
 }
+
 .menu {
     display: inline-block;
     width: 1500px;
@@ -51,8 +85,15 @@
     font-style: italic;
 }
 
-.menu ul a  {
-    text-decoration: none;
+.menu ul a {
+    color: red;
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 0 10px; /* Отступы вокруг ссылок */
+    transition: color 0.3s ease;
+}
+
+.menu ul a:hover {
+    color: #ccc;
 }
 
 

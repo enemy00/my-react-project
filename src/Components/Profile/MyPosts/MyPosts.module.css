@@ -1,7 +1,13 @@
 
 textarea {
-    display: block;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
 }
+
 
 .posts img {
     width: 50px;
@@ -12,6 +18,51 @@ textarea {
     margin-left: 10px;
 }
 
+.postsContainer {
+    margin-top: 20px;
+    margin-left: 20px;
+}
 .posts {
-    margin: 10px;
+    width: 500px;
+    height: 70px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.postMessage {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    margin-left: 20px;
+}
+.postLikes img {
+    max-width: 30px;
+    max-height: 30px;
+    mix-blend-mode: darken;
+}
+.postLikes {
+    float: right;
+    width: 100px;
+    height: 70px;
+    margin-top: 25px;
+}
+
+.sendButton {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);;
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sendButton:hover {
+    background-color: seagreen;
 }

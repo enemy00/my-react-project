@@ -1,9 +1,9 @@
 import * as React from "react";
 import s from "./Dialogs.module.css";
-import {NavLink} from "react-router-dom";
-import LoadingBlock from "../Preloader/Preloader";
 import {InitialType} from "../../redux/dialogsReducer";
 import {UserType} from "../../redux/resourcesReducer";
+import {NavLink} from "react-router-dom";
+import LoadingBlock from "../Preloader/Preloader";
 import {useEffect} from "react";
 
 type MapStatePropsType = {
@@ -14,6 +14,7 @@ type MapDispatchPropsType = {
     getUsers: () => void
 }
 const Dialogs: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
+
     useEffect(() => {
         props.getUsers()
     }, []);
@@ -21,6 +22,7 @@ const Dialogs: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     if (!props.users) {
         return <LoadingBlock/>
     }
+
     return (
         <>
             <h2 className={s.headContainer}>PhAPI dialogs</h2>
@@ -28,7 +30,7 @@ const Dialogs: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
                 <div className={s.dialogsItems}>
                     <span><b>Choose the person to start a dialog</b>:</span>
                     {props.users.map(u => {
-                        return <div>
+                        return <div className={s.items}>
                             <NavLink to={`/dialogs/convo/${u.id}`}>
                         <span>
                            {u.name}
@@ -39,7 +41,7 @@ const Dialogs: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
                 </div>
                 <div className={s.messages}>
                     <div className={s.textPosition}>
-                        Start ur dialog now!
+                        Choose the chat to continue texting.
                     </div>
                 </div>
             </div>

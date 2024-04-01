@@ -2,30 +2,44 @@
     padding: 10px;
 }
 
-.usersInfo {
-    display: grid;
-    grid-template-rows: 200px;
-    grid-template-columns: 300px 300px;
+.userContainer {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    border: 2px solid #4E37B2; /* Цвет границы */
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Внутренний отступ */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #fff; /* Цвет фона */
+    transition: transform 0.3s;
 }
+
+.userContainer:hover {
+    transform: translateY(-5px); /* Немного поднимаем карточку */
+}
+
+.userAvatar {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%; /* Круглое изображение */
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+}
+
 
 .headContainer {
     text-align: center;
     display: inline-block;
     margin-left: 500px;
 }
-.infoContainer {
-    margin-left: 30px;
-    border: 1px double black;
-    display: inline-block;
-    width: 600px;
-    height: 155px;
-    position: absolute;
-    margin-top: 20px;
-    padding-left: 10px;
-}
 
 .info {
-    font-weight: bold;
+    margin-left: 200px;
+    border: 1px double black;
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    padding-left: 10px;
 }
 
 .someInfo {
@@ -39,12 +53,3 @@
     font-size: 12px;
 }
 
-.container img {
-    margin: 10px;
-    padding: 10px;
-    max-width: 150px;
-}
-
-.container {
-    display: inline;
-}

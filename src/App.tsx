@@ -5,7 +5,6 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import UsersContainer from "./Components/Users/UsersContainer";
 import Login from "./Components/Login/Login";
 import HeaderContainer from "./Components/Header/HeaderContainer";
-import Items from "./Components/Movies/Items";
 import Movies from "./Components/Movies/Movies";
 import Footer from "./Footer/Footer";
 import {compose} from "redux";
@@ -22,6 +21,7 @@ import Github from "./Components/Github/Github";
 import GithubLogin from "./Components/Github/GithubLogin";
 import {lazy} from "react";
 import {withSuspense} from "./hocs/withSuspense";
+import WatchItems from "./Components/Movies/WatchItems";
 
 type MapStatePropsType = {
     initialized: boolean
@@ -59,14 +59,14 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType & Wit
                         <Route path="/dialogs/convo/:userId?" element={<Conversations/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/users" element={<UsersContainer/>}/>
-                        <Route path="/mainUsers" element={<MainUsersContainer/>}/>
-                        <Route path="/watch" element={<Items/>}/>
+                        <Route path="/phUsers" element={<MainUsersContainer/>}/>
+                        <Route path="/watch" element={<WatchItems/>}/>
                         <Route path="/watch/movies/:movieId?" element={<Movies/>}/>
-                        <Route path="/mainUsers/posts/:postId?" element={<PostsContainer/>}/>
-                        <Route path="/mainUsers/posts/:postId?/comments" element={<Posts/>}/>
+                        <Route path="/phUsers/posts/:postId?" element={<PostsContainer/>}/>
+                        <Route path="/phUsers/posts/:postId?/comments" element={<Posts/>}/>
                         <Route path="/github" element={<Github/>}/>
                         <Route path="/githubLogin" element={<GithubLogin/>}/>
-                        <Route path="*" element={<div><h3>404 - The page was not found</h3></div>}/>
+                        <Route path="*" element={<Navigate to={"/profile"}/>}/>
                     </Routes>
                 </div>
                 <Footer/>

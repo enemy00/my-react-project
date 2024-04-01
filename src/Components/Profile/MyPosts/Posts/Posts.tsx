@@ -1,4 +1,8 @@
 import * as React from "react";
+import s from "../MyPosts.module.css";
+import likesIcon from "../../../../pictures/likesicon.png";
+import profileAva from "../../../../pictures/user.jpg";
+
 
 type PropsType = {
     message: string
@@ -6,12 +10,12 @@ type PropsType = {
 }
 const Posts: React.FC<PropsType> = (props) => {
     return (
-        <div>
-            <img alt="image"
-                 src="https://gas-kvas.com/uploads/posts/2023-02/1675343501_gas-kvas-com-p-art-risunki-dlya-yutuba-28.jpg"/>
-            {props.message}
-            <div>
-                likes: {props.likesCount}
+        <div className={s.posts}>
+            <img className={s.profilePhoto} alt="image"
+                 src={profileAva}/>
+            <div className={s.postMessage}>{props.message}</div>
+            <div className={s.postLikes}>
+                Likes: {props.likesCount} <img src={likesIcon} alt="likes-icon"/>
             </div>
         </div>
     )

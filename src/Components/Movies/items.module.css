@@ -12,14 +12,6 @@
     font-size: 20px;
 }
 
-.matched {
-    display: inline-block;
-    width: 900px;
-    height: 180px;
-    border: 1px double black;
-    padding-left: 20px;
-}
-
 
 .item {
     max-width: 300px;
@@ -28,7 +20,30 @@
     margin-right: 10px;
     border: 1px double black;
     border-radius: 5px;
+    border-collapse: collapse;
 }
+
+.matched {
+    width: 900px;
+    display: inline-block;
+    border: 2px solid #4E37B2; /* Толщина, цвет и стиль границы */
+    border-radius: 5px; /* Скругление углов */
+    padding: 20px; /* Внутренний отступ */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #fff; /* Цвет фона */
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+.matched:hover {
+    border-color: #6E54A3; /* Изменение цвета границы при наведении */
+    transform: translateY(-5px); /* Эффект подъема при наведении */
+}
+
+.moviesELem {
+    text-align: center;
+    padding: 40px;
+}
+
 
 .matched a {
     text-decoration: none;
@@ -56,77 +71,161 @@
     font-weight: bold;
 }
 
-.movie {
-    display: grid;
-    grid-template-columns: 400px 900px;
-    grid-template-rows: 300px;
-}
 
-
-.container .headContainer {
-    background-color: darkgray;
-    height: 30px;
+.headContainer {
+    background-color: #333; /* Цвет фона */
+    padding: 15px 0; /* Внутренний отступ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
 }
 
 .headContainer a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: black;
     float: right;
+    color: #fff; /* Цвет текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+}
+
+.headContainer a:hover {
+    background-color: #555;
 }
 
 .headContainer label {
     margin-left: 15px;
+    margin-right: 10px;
+    color: lavenderblush;
+}
+
+.movie {
+    display: grid;
+    grid-template-columns: 400px 900px;
+    grid-template-rows: 300px;
+
 }
 
 .videoBlock {
+    width: 800px;
+    height: 450px;
     text-align: center;
-    margin-top: 150px;
+    display: inline-block;
+    margin-left: 250px;
+    margin-top: 200px;
+    animation: fadeIn 3s ease forwards;
+    border-bottom: 1px double #333;
+    border-right: none;
+    border-left: none;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .comments img {
-    border: 1px double black;
-    border-radius: 30px;
     max-width: 60px;
     margin-top: 10px;
 }
 
 .comments {
-    margin-left: 20px;
+    max-width: 600px;
     margin-top: 50px;
+    margin-left: 30px;
+}
+.comment {
+    border: 2px solid #333; /* Цвет границы */
+    border-radius: 10px; /* Скругление углов */
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+
 }
 
+.comment span {
+    color: #333;
+    font-weight: 500;
+}
+
+
 .imageAndLikes {
-    display: inline-block;
-    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .likes {
+    color: darkred;
+}
+.likes img {
+    max-width: 30px;
+    max-height: 30px;
+    mix-blend-mode: darken;
     margin-left: 10px;
 }
 
 .description {
     margin-top: 50px;
+    margin-left: 40px;
+
 }
+
 
 .movieInfo {
     display: inline-block;
     width: 800px;
-    border: 1px double black;
+    border-top: 1px solid #333;
+    border-bottom: none;
+    border-right: none;
+    border-left: 1px solid #333;
     margin-left: 30px;
     padding-left: 10px;
     margin-top: 20px;
+    line-height: 1.5;
+    color: #666;
 
 }
 
+.movieContainer h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.movieContainer {
+    margin-left: 20px;
+    display: inline-block;
+    width: 400px;
+    height: 370px;
+    margin-top: 20px;
+    border: 2px solid #333; /* Цвет границы */
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
 .imageAndLikes img {
-    max-width: 300px;
+    max-width: 350px;
+    margin-right: 20px
 }
 
 .serialsContainer {
     margin: 10px;
 }
+
+.watchContainer span {
+    font-weight: bold; /* Жирное начертание */
+    color: #333; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    background-color: darkgray; /* Цвет фона */
+    padding: 2px 10px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
 
 .image {
     padding: 5px;

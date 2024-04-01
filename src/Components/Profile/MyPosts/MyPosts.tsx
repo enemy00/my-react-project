@@ -25,8 +25,8 @@ const MyPosts: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     return (
         <div>
             <MyPostsReduxForm onSubmit={onSendMessage}/>
-            <div className={s.posts}>
-                my posts
+            <div className={s.postsContainer}>
+                <h3>My posts</h3>
                 <div>
                     {postsElements}
                 </div>
@@ -46,8 +46,8 @@ const MyPostsForm: React.FC<InjectedFormProps<AddPostMessageFormType, PropsType>
         <form onSubmit={props.handleSubmit}>
             <div className={s.elementsBlock}>
                 {
-                    createField<AddPostMessageFormKeysType>(0, 0,"Type ur message", "addPostMessage", [requireField, maxLength5], Textarea)}
-                <button>Send message</button>
+                    createField<AddPostMessageFormKeysType>(50, 3,"Type ur message", "addPostMessage", [requireField, maxLength5], Textarea)}
+                <button className={s.sendButton}>Send message</button>
             </div>
         </form>
 

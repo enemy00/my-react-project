@@ -38,7 +38,13 @@ hr {
     border-radius: 30px;
     background-color: floralwhite;
     margin-left: 50px;
+    transition: background-color 1s ease-in-out;
 }
+
+.sendButton:hover {
+    background-color: darkseagreen;
+}
+
 
 .button {
     top: 0;

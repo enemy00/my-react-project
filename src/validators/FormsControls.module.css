@@ -1,10 +1,12 @@
 .errorBlock textarea {
-    border: 1px red solid;
+    border: 2px red solid;
+}
 
-}
 .errorBlock input {
-    border: 1px red solid;
+    border: 2px red solid;
 }
+
 .errorBlock span {
     color: midnightblue;
+    font-weight: bold
 }

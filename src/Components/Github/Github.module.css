@@ -22,12 +22,13 @@ hr {
 .login {
     float: right;
     display: inline-block;
-    width: 200px;
+    width: 320px;
     height: 70px;
     border: 2px solid black;
     margin-top: 5px;
     margin-right: 5px;
-    padding: 3px;
+    padding: 5px;
+    background-color: darkgray;
 }
 
 .login a {
@@ -38,9 +39,7 @@ hr {
 .usersContainer {
     display: inline-block;
     width: 300px;
-    border: 1px solid black;
-    border-radius: 30px;
-
+    border-left: medium solid gray;
 }
 
 .usersContainer li {
@@ -54,6 +53,10 @@ hr {
     border-radius: 20px;
 }
 
+.githubInfoText p {
+    color: black;
+}
+
 .headContainer {
     text-align: center;
     display: inline-block;
@@ -64,16 +67,54 @@ hr {
     font-weight: lighter;
     font-size: 20px;
 }
+.userDetails {
+    flex-grow: 1;
+    margin-left: 40px;
+    margin-top: 40px;
+    color: #333;
+}
 
+.userCard {
+    width: 550px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 .githubInfo {
     display: inline-block;
     width: 1200px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
+
 
 .githubInfo img {
     float: right;
     margin-left: 5px;
+    margin-top: 30px;
+    max-width: 200px;
+    max-height: 200px;
+    mix-blend-mode: darken;
+
+}
+
+.loginButton {
+    margin-left: 5px;
+    margin-top: 5px;
+    display: inline-block;
+    padding: 5px 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
+    color: ghostwhite;
+    font-weight: lighter;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: midnightblue;
 }
 
 .loginForm {
@@ -109,8 +150,46 @@ hr {
     position: relative;
     border: 1px solid black;
     border-radius: 30px;
-    background-color: floralwhite;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
     margin-left: 50px;
+    transition: background-color 1s ease-in-out;
+
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.searchButton {
+    padding: 10px 25px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
+    color: #333;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+    margin-top: 5px;
+    display: inline-block;
+    font-weight: bolder;
+}
+
+
+.searchButton:hover {
+    background-color: #45a049;
+}
+
+.sendButton:hover {
+    background-color: darkseagreen;
 }
 
 .button {

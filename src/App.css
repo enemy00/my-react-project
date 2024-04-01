@@ -1,11 +1,12 @@
 .app {
     display: grid;
-    grid-template-rows: 50px 1200px 220px;
+    grid-template-rows: 100px 1600px 360px;
     grid-template-columns: 2fr 10fr;
     grid-template-areas:
             "h h"
             "n c"
             "f f";
+
 
     width: 1500px;
     margin: 0 auto;
@@ -13,5 +14,16 @@
 
 
 .app-content {
-    background-color: darkolivegreen;
+    background-color: lightgray; /* Цвет фона */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.app-content h2 {
+    color: #333; /* Цвет текста */
+}
+
+.app-content p {
+    line-height: 1.6; /* Межстрочный интервал */
+    color: #555; /* Цвет текста */
+    margin-bottom: 20px; /* Отступ снизу */
 }

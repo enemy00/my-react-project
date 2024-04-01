@@ -1,7 +1,7 @@
 import * as React from "react";
 import {NavLink} from "react-router-dom";
 import s from "./Header.module.css";
-import enemy00logo from "../../pictures/enemy00logo.jpg"
+import glasses from "../../pictures/glasses3d.png";
 
 export type MapStatePropsType = {
     login: string | null
@@ -11,16 +11,21 @@ export type MapDispatchPropsType = {
     logout: () => void
 }
 const Header: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
-
     return (
         <header>
-            <div>
-                <div className={s.link}>
-                    {props.isAuth
-                        ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
-                        : <NavLink to={"/login"}>Login</NavLink>}
-                </div>
-                <img src={enemy00logo} className={s.logo} alt="logo"/>
+            <div className={s.appInfo}><span>ChatCin<span
+                className={s.fLetter}>e</span><span
+                className={s.sLetter}>m</span>a
+                is the website</span><br/>where
+                u can chat & search for gh users<br/> read posts & watch the star wars movies.
+            </div>
+            <div className={s.headerContainer}><span>ChatCine<img className={s.glasses} src={glasses} alt="glasses"/>ma</span>
+            </div>
+            <div className={s.link}>
+                <NavLink to={"/youtube"}></NavLink>
+                {props.isAuth
+                    ? <div>{props.login} - <button className={s.btn} onClick={props.logout}>Logout</button></div>
+                    : <NavLink to={"/login"}>Login</NavLink>}
             </div>
         </header>
     )

@@ -17,34 +17,58 @@ const Footer: React.FC<MapStatePropsType> = (props) => {
         <div className={s.menuContainer}>Menu:</div>
         <div className={s.menu}>
             <ul>
-                <NavLink to="/profile"><li>Profile</li></NavLink>
-                <NavLink to="/dialogs"><li>Dialogs</li></NavLink>
-                <NavLink to="/users"><li>Users</li></NavLink>
+                <NavLink to="/profile">
+                    <li>Profile</li>
+                </NavLink>
+                <NavLink to="/dialogs">
+                    <li>Dialogs</li>
+                </NavLink>
+                <NavLink to="/users">
+                    <li>Users</li>
+                </NavLink>
             </ul>
             <div>
                 <ul>
-                    <NavLink to="/starwars"><li>Star Wars</li></NavLink>
-                    <NavLink to="/watch"><li>Watch</li></NavLink>
-                    <NavLink to="/mainUsers"><li>Ph users</li></NavLink>
-                    <NavLink to="/github"><li>Github users</li></NavLink>
+                    <NavLink to="/starwars">
+                        <li>Star Wars</li>
+                    </NavLink>
+                    <NavLink to="/watch">
+                        <li>Watch</li>
+                    </NavLink>
+                    <NavLink to="/mainUsers">
+                        <li>Ph users</li>
+                    </NavLink>
+                    <NavLink to="/github">
+                        <li>Github users</li>
+                    </NavLink>
                 </ul>
             </div>
         </div>
-        <div className={s.socials}>
-            <ul>
-                <li><NavLink to={`/socials/telegram/${props.userId}`}>
-                    <img src={telegram} alt="telegram"/>
-                </NavLink>
-                </li>
-                <li><NavLink to={`/socials/vk/${props.userId}`}>
-                    <img src={vk} alt="vk"/>
-                </NavLink>
-                </li>
-                <li><NavLink to={`/socials/youtube/${props.userId}`}>
-                    <img src={youtube} alt="youtube"/>
-                </NavLink>
-                </li>
-            </ul>
+        <div className={s.footerBlock}>
+            <div className={s.contactUs}>
+                <h3>Contact Us</h3>
+                <p>Email: info@000.com</p>
+                <p>Phone: +000</p>
+            </div>
+            <div className={s.followUs}>
+                <h3>Follow Us</h3>
+                <div className={s.socials}>
+                    <ul>
+                        <li><NavLink to={`/socials/telegram/${props.userId}`}>
+                            <img src={telegram} alt="telegram"/>
+                        </NavLink>
+                        </li>
+                        <li><NavLink to={`/socials/vk/${props.userId}`}>
+                            <img src={vk} alt="vk"/>
+                        </NavLink>
+                        </li>
+                        <li><NavLink to={`/socials/youtube/${props.userId}`}>
+                            <img src={youtube} alt="youtube"/>
+                        </NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 }

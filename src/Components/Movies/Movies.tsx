@@ -1,20 +1,21 @@
 import * as React from "react";
-import s from "./items.module.css"
+import s from "./items.module.css";
 import {getPeopleFact, PeopleFactType} from "../../redux/starwarsReducer";
 import {compose} from "redux";
 import {withRouter, WithRouterProps} from "../../hocs/withRouter";
 import {connect} from "react-redux";
 import LoadingBlock from "../Preloader/Preloader";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {AppStateType} from "../../redux/redux-store";
 import sw from "../../common/sw.mp4";
 import user from "../../pictures/user.jpg";
 import {CommentsType, getComments} from "../../redux/resourcesReducer";
+import likesIcon from "../../pictures/likesicon.png";
 
 const Video = () => {
     return (
         <div className={s.videoBlock}>
-            <video src={sw} width={700} height={400} controls={true}
+            <video className={s.movieVideo} src={sw} width={700} height={400} controls={true}
                    autoPlay={false}/>
         </div>
 
@@ -31,6 +32,9 @@ type MapDispatchPropsType = {
 }
 
 const Movies: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProps> = (props) => {
+
+    const [movieLikesCount, setMovieLikesCount] = useState(1293)
+
     const movieId = props.params.movieId;
     useEffect(() => {
         props.getPeopleFact(movieId)
@@ -47,12 +51,13 @@ const Movies: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProp
     return (
         <>
             <div className={s.movie}>
-                <div>
-                    <h3>Movie name: Star wars
-                    </h3>
+                <div className={s.movieContainer}>
+                    <h3>Movie name: Star wars</h3>
                     <div className={s.imageAndLikes}>
                         <img src="https://w.forfun.com/fetch/f8/f8e73717be7ef8b98d69ec80802977b0.jpeg" alt="image"/>
-                        <div className={s.likes}>Liked: 1293</div>
+                        <div className={s.likes}>Liked:<span>{movieLikesCount}</span><img onClick={() => {
+                            setMovieLikesCount(prev => prev + 1)
+                        }} src={likesIcon} alt="likes-icon"/></div>
                     </div>
                 </div>
                 <div className={s.description}><span>Description: {props.peopleFact.description}</span>
@@ -78,10 +83,10 @@ const Movies: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProp
             </div>
             <Video/>
             <div className={s.comments}>
-                {["What a great movie", "I like it!", "Not bad"].map(c => {
-                    return <div key={c}>
+                {props.comments.slice(0, 3).map(c => {
+                    return <div className={s.comment} key={c.id}>
                         <img src={user} alt="user image"/>
-                        {c}
+                        <span>Person with id {c.id} has written this</span>: {c.body}
                     </div>
                 })}
             </div>

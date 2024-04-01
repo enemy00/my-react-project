@@ -8,8 +8,6 @@ import {useEffect} from "react";
 import {AppStateType} from "../../redux/redux-store";
 
 
-
-
 type MapStatePropsType = {
     comments: Array<CommentsType>
 }
@@ -17,7 +15,6 @@ type MapDispatchPropsType = {
     getPostsComments: (postId: string) => void
 }
 const Posts: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProps> = (props) => {
-    debugger
     const postId = props.params.postId;
 
     useEffect(() => {
@@ -28,11 +25,8 @@ const Posts: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProps
         <div>
             {props.comments.map(c => {
                 return <div key={c.id} className={s.container}>
-                    <div>
-                        User name: {c.name}
-                    </div>
-                    <div>
-                        User id: {c.id}
+                    <div className={s.commentAuthor}>
+                        User's nickname: {c.name}
                     </div>
                     <div className={s.postContainer}>
                         Message post: {c.body}

@@ -1,14 +1,52 @@
-.logo {
-    max-width: 50px;
-    max-height: 30px;
+
+.headerContainer {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    margin-left: 400px;
+}
+
+
+.glasses {
+    max-width: 40px;
+    max-height: 20px;
     mix-blend-mode: multiply;
 }
 
-header {
-    background-color: bisque;
-    grid-area: h;
-    padding: 10px;
+.logo {
+    max-width: 50px;
+    max-height: 50px;
+    mix-blend-mode: multiply;
+}
 
+.fLetter {
+    color: mediumblue;
+}
+
+.sLetter {
+    color: darkred;
+}
+
+.headerContainer span {
+    font-size: 20px;
+    color: darkkhaki; /* Цвет текста */
+    letter-spacing: 10px; /* Межбуквенный интервал */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    grid-area: h;
+}
+
+.appInfo {
+    float: left;
+    color: ghostwhite;
+    font-weight: 600;
+    font-style: oblique;
 }
 
 header a {
@@ -21,8 +59,32 @@ header a {
 }
 
 .link a {
+    color: #fff;
     text-decoration: none;
-    color: darkblue;
-    font-weight: bold;
+    transition: color 1s;
 }
+
+.link a:hover {
+    color: #ffcc00;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4E37B2; /* Основной цвет фона */
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #00C6FF; /* Цвет фона при наведении */
+    transform: translateY(-2px); /* Эффект подъема при наведении */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
 

@@ -4,9 +4,6 @@ import {CommonThunkType, InferActionsTypes} from "./redux-store";
 const ADD_POST = "ADD_POST"
 const SET_PROFILE = "SET_PROFILE"
 const ADD_PROFILE_STATUS = "ADD_PROFILE_STATUS"
-const GET_PHOTO_SUCCESS = "GET_PHOTO_SUCCESS"
-
-
 export type PhotosType = {
     small: string | null
     large: string | null
@@ -43,7 +40,6 @@ const initial = {
     newPostText: "",
     profile: null as ProfileType | null,
     statusText: "",
-    photo: null as File | null,
     error: null as string | null
 }
 
@@ -70,11 +66,6 @@ const profileReducer = (state = initial, action: ActionsTypes): InitialType => {
                 ...state,
                 statusText: action.status
             }
-        case GET_PHOTO_SUCCESS:
-            return {
-                ...state,
-                photo: action.photo
-            }
 
         case SET_PROFILE:
             return {
@@ -93,7 +84,6 @@ export const actions = {
     addPostAC: (newText: string) => ({type: ADD_POST, newText} as const),
     addProfileStatusAC: (status: string) => ({type: ADD_PROFILE_STATUS, status} as const),
     setProfileAC: (profile: ProfileType) => ({type: SET_PROFILE, profile} as const),
-    getPhotoSuccessAC: (photo: File) => ({type: GET_PHOTO_SUCCESS, photo} as const)
 }
 
 export const getUserProfile = (userId: number): ThunkType =>
@@ -109,15 +99,6 @@ export const getUserProfileStatus = (userId: number): ThunkType =>
             .then(data => {
                 dispatch(actions.addProfileStatusAC(data))
             })
-    }
-export const getPhoto = (photo: File): ThunkTypeForBooleanPromise =>
-    async (dispatch) => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(true)
-                dispatch(actions.getPhotoSuccessAC(photo))
-            }, 3000)
-        })
     }
 export const updateUserStatus = (status: string): ThunkTypeForBooleanPromise =>
     async (dispatch) => {

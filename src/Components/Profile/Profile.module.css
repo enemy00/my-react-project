@@ -1,13 +1,13 @@
 
-.alwaysProfileBlock img {
-    max-width: 1000px;
-    height: 200px;
-}
-
-
 textarea {
-    display: block;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
 }
+
 
 .posts img {
     max-width: 50px;
@@ -19,9 +19,23 @@ textarea {
 }
 
 
+.changeProfilePhoto {
+    display: inline-block;
+    padding: 10px 5px;
+    color: dimgray;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 30px;
+}
+
 .profilePhoto {
-    margin-left: 50px;
-    margin-bottom: 10px;
+    mix-blend-mode: multiply;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .profileInfo {
@@ -34,7 +48,7 @@ textarea {
     margin-bottom: 5px;
 }
 
-.contacts  {
+.contacts {
     padding: 2px;
     margin-left: 10px;
 }
@@ -42,7 +56,7 @@ textarea {
 .date {
     float: right;
     font-weight: bold;
-    position: absolute;
-    right: 230px;
-    top: 60px;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 10px;
 }

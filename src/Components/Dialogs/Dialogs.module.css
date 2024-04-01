@@ -8,10 +8,18 @@
 .dialogsItems a {
     text-decoration: none;
     color: black;
+    transition: color 0.5s;
+}
+
+.dialogsItems a:hover {
+    color: darkgoldenrod;
 }
 
 .container {
     margin: 10px;
+}
+.items {
+    padding: 10px;
 }
 
 .dialogs .dialogsItems {
@@ -20,14 +28,15 @@
     width: 300px;
     height: 600px;
     padding-left: 10px;
-    border: 1px double black;
-
 }
 
 .dialogs .messages {
     margin: 30px;
     display: inline-block;
     border: 1px double black;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
     width: 800px;
     height: 600px;
     padding-left: 10px;
@@ -59,8 +68,8 @@
 
 .textPosition {
     position: absolute;
-    bottom: 470px;
-    right: 540px;
+    bottom: 420px;
+    right: 480px;
     font-size: 20px;
 }
 

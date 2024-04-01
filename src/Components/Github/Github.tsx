@@ -62,30 +62,36 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
             {props.isRegistered ? null :
                 <div className={s.login}>If you want to use this page for search people, u have to login in
                     github: <NavLink
-                        to={"/githubLogin"}>Login</NavLink></div>}
+                        to={"/githubLogin"}><span className={s.loginButton}>Login</span></NavLink></div>}
             <h2 className={s.headContainer}>Github users <div>(to search for github users and also view them
                 brief information)</div></h2>
             <div className={s.githubInfo}>
                 <img src={github} alt="github-image"/>
-                <span>
-                    GitHub is considered an important tool for software developers,
+                <span className={s.githubInfoText}>
+                    <p>GitHub is considered an important tool for software developers,
                     and its popularity is second to none. It currently serves more than 25 million users.
                     A significant number of professionals turn to GitHub to improve workflows and collaboration.
                     GitHub is a cloud service that hosts a version control system (VCS) called Git.
                     This allows developers to collaborate and make changes to common projects,
-                    tracking their progress in detail.
+                        tracking their progress in detail.</p>
+                    <p>GitHub hosts over 100 million repositories, the majority of which are open-source projects.
+                    This statistic shows that GitHub is among the most popular Git GUI clients and is used by various professionals
+                        and large businesses, such as Hostinger.</p>
+                    <p>GitHub in simple terms - is just a space or a cloud if you will where you can save, share,
+                    and edit files simultaneously with someone else. Every file, files, or whatever project that you
+                        save into GitHub is called a repository or “repo”.</p>
                     </span>
             </div>
 
             {props.isRegistered && <div className={s.container}>
                 <div>
-                    <div>
-                        <input placeholder="search"
+                    <div className={s.searchContainer}>
+                        <input className={s.searchInput} placeholder="search"
                                value={tempSearch}
                                onChange={(e) => {
                                    setTempSearch(e.currentTarget.value)
                                }}/>
-                        <button onClick={() => {
+                        <button className={s.searchButton} onClick={() => {
                             setSearchTerm(tempSearch)
                         }}>Find
                         </button>
@@ -101,19 +107,21 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
                         )}
                     </ul>
                 </div>
-                <div>
+                <div className={s.userDetails}>
                     <h3>User's details:</h3>
-                    {userDetails && <div>
-                        <img src={userDetails.avatar_url} alt="user image"/>
-                        <div>
-                            {userDetails.login}, followers: {userDetails.followers}
-                            <div>tw username: {userDetails.twitter_username
-                                ? userDetails.twitter_username
-                                : "The person has no twitter username"},
-                                following for: {userDetails.following + " users"}
+                    <div className={s.userCard}>
+                        {userDetails && <div>
+                            <img src={userDetails.avatar_url} alt="user image"/>
+                            <div>
+                                Login: {userDetails.login}, followers: {userDetails.followers}
+                                <div>tw username: {userDetails.twitter_username
+                                    ? userDetails.twitter_username
+                                    : "The person has no twitter username"},
+                                    following for: {userDetails.following + " users"}
+                                </div>
                             </div>
-                        </div>
-                    </div>}
+                        </div>}
+                    </div>
                 </div>
             </div>}
         </>

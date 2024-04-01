@@ -25,14 +25,13 @@ const PostsContainer: React.FC<MapStatePropsType & MapDispatchPropsType & WithRo
         props.getPost(postId)
     }, [postId]);
 
-
     return (
         <div className={s.mainContainer}>
-            <h4>Posts are here</h4>
+            <h2>Posts are here</h2>
             <div className={s.postsContainer}>
                 <div className={s.postTitle}><b>Post theme is</b>: {props.post.title}</div>
                 <div className={s.post}>The person said: {props.post.body}
-                    <NavLink to={`/mainUsers/posts/${props.post.id}/comments`}>
+                    <NavLink to={`/phUsers/posts/${props.post.id}/comments`}>
                         <div>
                             <span className={s.postButton}>Click to take a look</span>
                         </div>

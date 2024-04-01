@@ -3,14 +3,31 @@
     color: black;
 }
 
-.mainContainer h4 {
+.postsContainer {
+    border: 2px solid #4E37B2; /* Цвет границы */
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Внутренний отступ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #fff; /* Цвет фона */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mainContainer h2 {
     text-align: center;
+    display: inline-block;
+    margin-left: 500px;
 
 }
 
 .container {
     padding: 10px;
 }
+
+.postsContainer:hover {
+    transform: translateY(5px); /* Немного поднимаем пост */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Увеличиваем тень */
+}
+
 
 .postTitle {
     width: 700px;
@@ -19,6 +36,7 @@
     border: 1px double black;
     text-align: center;
 }
+
 .post {
     border: 1px double black;
     display: block;
@@ -26,29 +44,51 @@
     margin: 0 auto;
     height: 100px;
     text-align: center;
+    color: #666;
 }
+
 .postButton {
-    border: 1px solid black;
-    background-color: dimgrey;
     float: right;
-    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
     font-weight: bold;
-    padding: 5px;
-    margin: 5px;
+    background-color: dimgrey; /* Цвет кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Изменение курсора при наведении */
+    transition: background-color 0.3s;
 }
 
 
-.container .postContainer {
-    border: 1px double black;
+.postContainer {
     display: inline-block;
-    width: 700px;
-    height: 100px;
-    border-radius: 15px;
-    padding-left: 10px
+    width: 1000px;
+    border: 2px solid #4E37B2; /* Цвет границы */
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Внутренний отступ */
+    margin-bottom: 20px; /* Отступ снизу */
+    background-color: #fff; /* Цвет фона */
+    transition: transform 0.3s, box-shadow 0.3s;
+    line-height: 1.5; /* Межстрочный интервал */
+    color: #333;
 }
 
-.container .postContainer span {
+.postContainer span {
     float: right;
     color: navy;
 }
+.commentAuthor {
+    font-size: 18px;
+    color: #666; /* Цвет текста */
+    margin-bottom: 10px;
+}
+
+.postContainer:hover {
+    transform: translateY(5px); /* Немного поднимаем комментарий */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
 

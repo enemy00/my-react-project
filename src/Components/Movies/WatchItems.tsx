@@ -15,7 +15,7 @@ type MapStatePropsType = {
 type MapDispatchPropsType = {
     getPeopleState: () => void
 }
-const Items: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleState, getPeopleState}) => {
+const WatchItems: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleState, getPeopleState}) => {
 
     /* const [itemsClick, setItemsClick] = useState(false)*/
     const [selectedMood, setSelectedMood] = useState("")
@@ -73,7 +73,9 @@ const Items: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleState,
                     novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing
                     fictional universe. Star Wars is one of the highest-grossing media franchises of all time.
                 </span>
-                {moviesElements}
+                <div className={s.moviesELem}>
+                    {moviesElements}
+                </div>
                 {/*  {serialsElements}*/}
             </div>
             {/*{!itemsClick
@@ -97,4 +99,4 @@ let mapStateToProps = (state: AppStateType) => ({
 })
 
 
-export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps, {getPeopleState})(Items);
+export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps, {getPeopleState})(WatchItems);
