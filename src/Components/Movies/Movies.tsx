@@ -11,6 +11,7 @@ import sw from "../../common/sw.mp4";
 import user from "../../pictures/user.jpg";
 import {CommentsType, getComments} from "../../redux/resourcesReducer";
 import likesIcon from "../../pictures/likesicon.png";
+import {withAuthRedirect} from "../../hocs/withAuthRedirect";
 
 const Video = () => {
     return (
@@ -99,5 +100,6 @@ const mapState = (state: AppStateType) => ({
     comments: state.resources.comments
 })
 export default compose<React.ComponentType>(
+    withAuthRedirect,
     withRouter,
     connect(mapState, {getPeopleFact, getComments}))(Movies);

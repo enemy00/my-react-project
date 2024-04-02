@@ -6,6 +6,8 @@ import github from "../../pictures/github.jpg";
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
+import {compose} from "redux";
+import {withAuthRedirect} from "../../hocs/withAuthRedirect";
 
 type SearchUserType = {
     login: string
@@ -131,4 +133,6 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
 const mapState = (state: AppStateType) => ({
     isRegistered: state.github.isRegistered
 })
-export default connect(mapState, {})(Github);
+export default compose<React.ComponentType>(
+    withAuthRedirect,
+    connect(mapState, {}))(Github);

@@ -9,6 +9,7 @@ import {withRouter, WithRouterProps} from "../../hocs/withRouter";
 import Profile from "./Profile";
 import {useEffect} from "react";
 import {AppStateType} from "../../redux/redux-store";
+import {withAuthRedirect} from "../../hocs/withAuthRedirect";
 
 type MapStatePropsType = {
     profile: ProfileType | null
@@ -62,6 +63,7 @@ let mapStateToProps = (state: AppStateType) => ({
     authorizedUserId: state.auth.userId
 })
 export default compose<React.ComponentType>(
+    withAuthRedirect,
     withRouter,
     connect(mapStateToProps, {
         getUserProfile,

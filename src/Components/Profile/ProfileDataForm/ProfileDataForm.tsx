@@ -8,6 +8,7 @@ import {createField, Input, Textarea} from "../../../validators/FormsControls";
 type PropsType = {
     profile: ProfileType
 }
+
 type ProfileTypeKeys = Extract<keyof ProfileType, string>
 
 const ProfileDataForm: React.FC<InjectedFormProps<ProfileType, PropsType> & PropsType> = (props) => {
@@ -25,12 +26,12 @@ const ProfileDataForm: React.FC<InjectedFormProps<ProfileType, PropsType> & Prop
                             Input, {type: "checkbox"})}
                             <div>
                                 <div>
-                                    my programming skills: {createField<ProfileTypeKeys>(0, 0,"My skills",
+                                    my programming skills: {createField<ProfileTypeKeys>(0, 0, "My skills",
                                     "lookingForAJobDescription",
                                     [], Textarea)}
                                 </div>
                                 <div>
-                                    my name is: {createField<ProfileTypeKeys>(0, 0,"Name", "fullName", [], Input)}
+                                    my name is: {createField<ProfileTypeKeys>(0, 0, "Name", "fullName", [], Input)}
                                 </div>
                                 <div className={s.contacts}>
                                     contacts: {Object.keys(props.profile.contacts).map(key => {
