@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/my-react-project/static/css/main.5543f949.css",
-    "main.js": "/my-react-project/static/js/main.75b1a794.js",
+    "main.css": "/my-react-project/static/css/main.bf09afa1.css",
+    "main.js": "/my-react-project/static/js/main.7730a01f.js",
     "static/js/453.48114f3e.chunk.js": "/my-react-project/static/js/453.48114f3e.chunk.js",
     "static/css/332.e5433b66.chunk.css": "/my-react-project/static/css/332.e5433b66.chunk.css",
-    "static/js/332.a6687399.chunk.js": "/my-react-project/static/js/332.a6687399.chunk.js",
+    "static/js/332.5d4526d8.chunk.js": "/my-react-project/static/js/332.5d4526d8.chunk.js",
     "static/js/32.20c3e99d.chunk.js": "/my-react-project/static/js/32.20c3e99d.chunk.js",
     "static/media/sw.mp4": "/my-react-project/static/media/sw.b8afdac05448e8dde3aa.mp4",
     "static/media/cinemaicon.jpg": "/my-react-project/static/media/cinemaicon.73600d30c507568ae1d2.jpg",
@@ -13,7 +13,6 @@
     "static/media/usersicon.jpg": "/my-react-project/static/media/usersicon.24b3bbce4d45d55b4a75.jpg",
     "static/media/movie.jpg": "/my-react-project/static/media/movie.9fdfb1a35b8c706c67ad.jpg",
     "static/media/dialogsicon.png": "/my-react-project/static/media/dialogsicon.cd32fd6223ae08a467a9.png",
-    "static/media/phapiicon.png": "/my-react-project/static/media/phapiicon.9df17d1a1bac5cd1b793.png",
     "static/media/userss.png": "/my-react-project/static/media/userss.be2959bfcfaeee682f4f.png",
     "static/media/ghapiicon.jpg": "/my-react-project/static/media/ghapiicon.52d6e3fa7c9c3197b281.jpg",
     "static/media/profileicon.png": "/my-react-project/static/media/profileicon.bc2a39867d2d45efcda7.png",
@@ -24,16 +23,17 @@
     "static/media/vk.png": "/my-react-project/static/media/vk.5e00c24fd36d479ee1bc.png",
     "static/media/user.jpg": "/my-react-project/static/media/user.75fc632492795d2e8515.jpg",
     "static/media/users.png": "/my-react-project/static/media/users.9de7081025cee4e0b645.png",
+    "static/media/phapiicon.png": "/my-react-project/static/media/phapiicon.66f66b0b1a66d89f0d23.png",
     "index.html": "/my-react-project/index.html",
-    "main.5543f949.css.map": "/my-react-project/static/css/main.5543f949.css.map",
-    "main.75b1a794.js.map": "/my-react-project/static/js/main.75b1a794.js.map",
+    "main.bf09afa1.css.map": "/my-react-project/static/css/main.bf09afa1.css.map",
+    "main.7730a01f.js.map": "/my-react-project/static/js/main.7730a01f.js.map",
     "453.48114f3e.chunk.js.map": "/my-react-project/static/js/453.48114f3e.chunk.js.map",
     "332.e5433b66.chunk.css.map": "/my-react-project/static/css/332.e5433b66.chunk.css.map",
-    "332.a6687399.chunk.js.map": "/my-react-project/static/js/332.a6687399.chunk.js.map",
+    "332.5d4526d8.chunk.js.map": "/my-react-project/static/js/332.5d4526d8.chunk.js.map",
     "32.20c3e99d.chunk.js.map": "/my-react-project/static/js/32.20c3e99d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5543f949.css",
-    "static/js/main.75b1a794.js"
+    "static/css/main.bf09afa1.css",
+    "static/js/main.7730a01f.js"
   ]
 }
