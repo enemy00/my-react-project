@@ -26,17 +26,17 @@
 .matched {
     width: 900px;
     display: inline-block;
-    border: 2px solid #4E37B2; /* Толщина, цвет и стиль границы */
-    border-radius: 5px; /* Скругление углов */
-    padding: 20px; /* Внутренний отступ */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
-    background-color: #fff; /* Цвет фона */
+    border: 2px solid #4E37B2;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     transition: border-color 0.3s, transform 0.2s;
 }
 
 .matched:hover {
-    border-color: #6E54A3; /* Изменение цвета границы при наведении */
-    transform: translateY(-5px); /* Эффект подъема при наведении */
+    border-color: #6E54A3;
+    transform: translateY(-5px);
 }
 
 .moviesELem {
@@ -73,18 +73,18 @@
 
 
 .headContainer {
-    background-color: #333; /* Цвет фона */
-    padding: 15px 0; /* Внутренний отступ */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
+    background-color: #333;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .headContainer a {
     float: right;
-    color: #fff; /* Цвет текста ссылок */
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 10px 20px; /* Внутренний отступ */
-    border-radius: 5px; /* Скругление углов */
-    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .headContainer a:hover {
