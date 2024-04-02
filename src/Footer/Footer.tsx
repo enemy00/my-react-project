@@ -1,9 +1,9 @@
 import * as React from "react";
 import s from "./Footer.module.css";
 import {NavLink} from "react-router-dom";
-import telegram from "../pictures/tg.png";
+import telegram from "../pictures/tg.jpg";
 import vk from "../pictures/vk.png";
-import youtube from "../pictures/youtube.png";
+import youtube from "../pictures/youtube.jpg";
 import {connect} from "react-redux";
 import {AppStateType} from "../redux/redux-store";
 
@@ -50,8 +50,8 @@ const Footer: React.FC<MapStatePropsType> = (props) => {
                 <p>Email: info@000.com</p>
                 <p>Phone: +000</p>
             </div>
-            <div className={s.followUs}>
-                <h3>My socials</h3>
+            <div className={s.mySocials}>
+                <h3>My Socials</h3>
                 <div className={s.socials}>
                     <ul>
                         <li><NavLink to={`/socials/telegram/${props.userId}`}>

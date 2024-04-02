@@ -13,9 +13,7 @@ export type MapDispatchPropsType = {
 const Header: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     return (
         <header>
-            <div className={s.appInfo}><span>ChatCin<span
-                className={s.fLetter}>e</span><span
-                className={s.sLetter}>m</span>a
+            <div className={s.appInfo}><span>ChatC<span className={s.fLetter}>i</span>ne<span className={s.sLetter}>m</span>a
                 is the website</span><br/>where
                 u can chat & search for gh users<br/> read posts & watch the star wars movies.
             </div>
