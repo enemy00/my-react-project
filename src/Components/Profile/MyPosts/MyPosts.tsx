@@ -46,7 +46,7 @@ const MyPostsForm: React.FC<InjectedFormProps<AddPostMessageFormType, PropsType>
         <form onSubmit={props.handleSubmit}>
             <div className={s.elementsBlock}>
                 {
-                    createField<AddPostMessageFormKeysType>(50, 3,"Type ur message", "addPostMessage", [requireField, maxLength5], Textarea)}
+                    createField<AddPostMessageFormKeysType>(50, 3,"Write the message", "addPostMessage", [requireField, maxLength5], Textarea)}
                 <button className={s.sendButton}>Send message</button>
             </div>
         </form>

@@ -18,6 +18,7 @@
 .container {
     margin: 10px;
 }
+
 .items {
     padding: 10px;
 }
@@ -61,8 +62,12 @@
 
 .messages textarea {
     position: absolute;
-    top: 630px;
-    right: 420px;
+    bottom: 170px;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     resize: none;
 }
 
@@ -80,6 +85,20 @@
 
 .button {
     position: absolute;
-    top: 675px;
-    right: 420px;
+    bottom: 172px;
+    right: 480px;
+    width: 80px;
+    padding: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);;
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: seagreen;
 }

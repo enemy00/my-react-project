@@ -39,12 +39,10 @@
 
 .post {
     border: 1px double black;
-    display: block;
     width: 700px;
     margin: 0 auto;
     height: 100px;
     text-align: center;
-    color: #666;
 }
 
 .postButton {
@@ -52,8 +50,8 @@
     margin-right: 10px;
     margin-top: 10px;
     font-weight: bold;
-    background-color: dimgrey;
-    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    color: #333;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

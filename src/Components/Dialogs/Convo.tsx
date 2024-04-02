@@ -71,8 +71,8 @@ type PropsType = {}
 const ConversationForm: React.FC<InjectedFormProps<FormParamsType, PropsType> & PropsType> = (props) => {
     return <>
         <form onSubmit={props.handleSubmit}>
-            {createField(80, 4, "Type something", "addMessage", [], Textarea)}
-            <button className={s.button}>Send</button>
+            {createField(70, 5, "Write the message", "addMessage", [], Textarea)}
+            <button className={s.button}>Send message</button>
         </form>
     </>
 }
