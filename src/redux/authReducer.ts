@@ -59,8 +59,8 @@ export const loginMe = (authLogin: string, authPassword: string, rememberMe: boo
 
 export const logout = (): ThunkType => async (dispatch) => {
     setTimeout(() => {
-        debugger
         dispatch(actions.setAuth(null, null, false))
     }, 2000)
 }
+
 export default authReducer;
