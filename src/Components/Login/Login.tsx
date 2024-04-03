@@ -49,14 +49,14 @@ const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
 const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType>> = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            {createField<LoginFormValuesTypeKeys>(0, 0,"Login", "loginText",
+            Login: {createField<LoginFormValuesTypeKeys>(null, 0, 0,"Login", "loginText",
                 [requireField], Input)}
             <hr/>
-            {createField<LoginFormValuesTypeKeys>(0, 0, "Password", "passwordText",
+            Password: {createField<LoginFormValuesTypeKeys>(null, 0, 0, "Password", "passwordText",
                 [requireField], Input, {type: "password"})}
 
             <hr/>
-            Remember me: {createField<LoginFormValuesTypeKeys>(0, 0,undefined, "rememberMe",
+            Remember me: {createField<LoginFormValuesTypeKeys>(null,0, 0,undefined, "rememberMe",
                 [], Input, {type: "checkbox"})}
             <button className={s.sendButton}>Send</button>
         </form>

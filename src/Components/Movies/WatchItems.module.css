@@ -110,11 +110,11 @@
     text-align: center;
     display: inline-block;
     margin-left: 250px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
     margin-top: 200px;
+    background-color: darkgrey;
     animation: fadeIn 3s ease forwards;
-    border-bottom: 1px double #333;
-    border-right: none;
-    border-left: none;
+    padding-top: 20px;
 }
 
 @keyframes fadeIn {
@@ -160,6 +160,7 @@
 
 .likes {
     color: darkred;
+    font-weight: 500;
 }
 
 .likes img {
@@ -167,6 +168,7 @@
     max-height: 30px;
     mix-blend-mode: darken;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .description {
@@ -204,9 +206,7 @@
     width: 400px;
     height: 370px;
     margin-top: 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
 .imageAndLikes img {

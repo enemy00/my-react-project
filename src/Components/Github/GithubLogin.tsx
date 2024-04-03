@@ -6,6 +6,8 @@ import {AppStateType} from "../../redux/redux-store";
 import {getLoginData} from "../../redux/githubReducer";
 import {Navigate} from "react-router-dom";
 import s from "./Github.module.css";
+import {compose} from "redux";
+import {withAuthRedirect} from "../../hocs/withAuthRedirect";
 
 type MapStatePropsType = {
     login: string | null
@@ -51,12 +53,12 @@ const GithubLoginForm: React.FC<InjectedFormProps<LoginFormParamsType, PropsType
     return (
         <form onSubmit={props.handleSubmit}>
             <span>
-                <div>login: {createField( 0, 0, "login", "myLogin", [], Input)}
+                <div>Login: {createField(null, 0, 0, "Login", "myLogin", [], Input)}
                     <hr/>
-                    <div>password: {createField(0, 0,"password", "myPassword", [], Input, {type: "password"})}
+                    <div>Password: {createField(null, 0, 0, "Password", "myPassword", [], Input, {type: "password"})}
                         <hr/>
-                        Remember me: {createField(0, 0, undefined, "rememberMe", [], Input, {type: "checkbox"})}
-                            <button className={s.sendButton}>Send</button>
+                        Remember me: {createField(null, 0, 0, undefined, "rememberMe", [], Input, {type: "checkbox"})}
+                        <button className={s.sendButton}>Send</button>
             </div>
                 </div>
             </span>
@@ -74,4 +76,6 @@ const mapState = (state: AppStateType) => ({
     rememberMe: state.github.rememberMe,
     isRegistered: state.github.isRegistered
 })
-export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapState, {getLoginData})(GithubLogin);
+export default compose<React.ComponentType>(
+    withAuthRedirect,
+    connect(mapState, {getLoginData}))(GithubLogin);

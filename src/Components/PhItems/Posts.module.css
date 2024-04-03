@@ -49,15 +49,13 @@
 .postButton {
     float: right;
     margin-right: 10px;
-    margin-top: 10px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
     color: #333;
     border: none;
-    padding: 10px 20px;
+    padding: 7px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 

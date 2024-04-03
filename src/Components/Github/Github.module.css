@@ -13,11 +13,13 @@ hr {
 .selected {
     border: 1px solid black;
     border-radius: 10px;
-    background-color: wheat;
     margin-top: 5px;
-    width: 150px;
-    height: 15px;
+    max-width: 150px;
+    max-height: 50px;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+
 
 .login {
     float: right;
@@ -38,20 +40,16 @@ hr {
 
 .usersContainer {
     display: inline-block;
-    width: 300px;
+    max-width: 150px;
     border-left: medium solid gray;
 }
 
 .usersContainer li {
     list-style: none;
     padding: 8px;
+    cursor: pointer;
 }
 
-.container img {
-    max-width: 200px;
-    border: 1px double black;
-    border-radius: 20px;
-}
 
 .githubInfoText p {
     color: black;
@@ -76,17 +74,22 @@ hr {
 }
 
 .userCard {
-    width: 550px;
+    max-width: 500px;
+    height: 250px;
     margin: 10px;
     padding: 20px;
     background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.userCard img {
+    max-width: 200px;
+    max-height: 150px;
 }
 
 .githubInfo {
     display: inline-block;
-    width: 1200px;
+    max-width: 1200px;
     margin-left: 20px;
 }
 
@@ -127,7 +130,7 @@ hr {
 }
 
 .formBox {
-    width: 500px;
+    max-width: 500px;
     height: 400px;
     position: relative;
     margin-left: 360px;
@@ -158,16 +161,15 @@ hr {
 }
 
 .searchContainer {
-    display: flex;
     align-items: center;
     margin-bottom: 20px;
+    display: flex;
 }
 
 .searchInput {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
+    padding: 10px 400px 10px 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
 }
 
 .searchButton {
@@ -179,7 +181,7 @@ hr {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     display: inline-block;
     font-weight: bolder;
 }

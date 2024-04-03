@@ -1,3 +1,4 @@
+/*
 import {swAPI} from "../api/api";
 import {CommonThunkType, InferActionsTypes} from "./redux-store";
 
@@ -149,3 +150,4 @@ export const getPeopleFact = (id: number): ThunkType => async (dispatch) => {
 
 
 export default starWarsReducer;
+*/

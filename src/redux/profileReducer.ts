@@ -40,10 +40,8 @@ const initial = {
         {id: 4, message: "I'm sitting at my computer", likesCount: 12},
         {id: 5, message: "Who wants to go for a walk?", likesCount: 30}
     ] as Array<PostsType>,
-    newPostText: "",
     profile: null as ProfileType | null,
     statusText: "",
-    error: null as string | null
 }
 
 export type InitialType = typeof initial
@@ -61,7 +59,6 @@ const profileReducer = (state = initial, action: ActionsTypes): InitialType => {
             return {
                 ...state,
                 posts: [...state.posts, newPost],
-                newPostText: ""
             }
 
         case ADD_PROFILE_STATUS:
@@ -80,7 +77,7 @@ const profileReducer = (state = initial, action: ActionsTypes): InitialType => {
             return state;
     }
 }
-type ThunkType = CommonThunkType<ActionsTypes, Promise<void>>
+type ThunkType = CommonThunkType<ActionsTypes>
 type ThunkTypeForBooleanPromise = CommonThunkType<ActionsTypes, Promise<boolean>>
 type ActionsTypes = InferActionsTypes<typeof actions>
 export const actions = {
@@ -89,13 +86,12 @@ export const actions = {
     setProfileAC: (profile: ProfileType) => ({type: SET_PROFILE, profile} as const),
 }
 
-export const getUserProfile = (userId: number): ThunkType =>
-    async (dispatch) => {
-        profileAPI.getProfile(userId)
-            .then(data => {
-                dispatch(actions.setProfileAC(data))
-            })
-    }
+export const getUserProfile = (userId: number): ThunkType => async (dispatch) => {
+    profileAPI.getProfile(userId)
+        .then(data => {
+            dispatch(actions.setProfileAC(data))
+        })
+}
 export const getUserProfileStatus = (userId: number): ThunkType =>
     async (dispatch) => {
         profileAPI.getStatus(userId)

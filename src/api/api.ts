@@ -2,7 +2,7 @@ import axios from "axios";
 import {ProfileType} from "../redux/profileReducer";
 import {UsersType} from "../redux/usersReducer";
 import {CommentsType, PostType, UserType} from "../redux/resourcesReducer";
-import {PeopleFactPropertiesType, PeopleType, PlanetsType} from "../redux/starwarsReducer";
+import {PeopleFactPropertiesType} from "../redux/starwarsReducerTest";
 
 const instance = axios.create({
     baseURL: "https://social-network.samuraijs.com/api/1.0/",
@@ -50,15 +50,8 @@ type PeoplePropertiesType = {
 type GetPeopleFactResponseType = {
     result: PeoplePropertiesType
 }
-type GetPlanetsResponseType = {
-    results: Array<PlanetsType>
-    count: number
-}
 
-type GetPeopleResponseType = {
-    results: Array<PeopleType>
-    count: number
-}
+
 export const swAPI = {
     async getPeopleState() {
         return axios.get<GetPeopleStateResponseType>("https://www.swapi.tech/api/people")
@@ -68,14 +61,6 @@ export const swAPI = {
         return axios.get<GetPeopleFactResponseType>(`https://swapi.tech/api/people/${id}`)
             .then(res => res.data)
     },
-    async getPlanets(id: number | string) {
-        return axios.get<GetPlanetsResponseType>(`https://swapi.dev/api/planets/?page=${id}`)
-            .then(res => res.data)
-    },
-    async getPeople(id: number | string) {
-        return axios.get<GetPeopleResponseType>(`https://swapi.dev/api/people/?page=${id}`)
-            .then(res => res.data)
-    }
 }
 
 export const phAPI = {
@@ -101,6 +86,33 @@ export const phAPI = {
     }
 }
 
+export const githubAPI = {
+    async getGithubUsers(userName: string) {
+        return axios.get<SearchResult>(`https://api.github.com/search/users?q=${userName}`)
+            .then(res => res.data)
+    },
+    async getUserDetails(userName: string) {
+        return axios.get<UserDetailsType>(`https://api.github.com/users/${userName}`)
+            .then(res => res.data)
+    }
+}
+
+export type UserDetailsType = {
+    login: string
+    id: number
+    avatar_url: string
+    followers: number
+    following: number
+    twitter_username: null | string
+}
+
+export type SearchUserType = {
+    login: string
+    id: number
+}
+export type SearchResult = {
+    items: Array<SearchUserType>
+}
 
 
 

@@ -22,6 +22,7 @@ import WatchItems from "./Components/Movies/WatchItems";
 import PhUsersContainer from "./Components/PhItems/PhUsersContainer";
 import UsersContainerWithHooks from "./Components/Users/UsersContainerWithHooks";
 import HeaderContainerWithHooks from "./Components/Header/HeaderContainerWithHooks";
+import GithubTest from "./Components/Github/GithubTest";
 
 type MapStatePropsType = {
     initialized: boolean
@@ -64,7 +65,7 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType & Wit
                         <Route path="/watch/movies/:movieId?" element={<Movies/>}/>
                         <Route path="/phUsers/posts/:postId?" element={<PostsContainer/>}/>
                         <Route path="/phUsers/posts/:postId?/comments" element={<Posts/>}/>
-                        <Route path="/github" element={<Github/>}/>
+                        <Route path="/github" element={<GithubTest/>}/>
                         <Route path="/githubLogin" element={<GithubLogin/>}/>
                         <Route path="*" element={<Navigate to={"/profile"}/>}/>
                     </Routes>

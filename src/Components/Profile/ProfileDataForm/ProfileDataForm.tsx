@@ -17,25 +17,27 @@ const ProfileDataForm: React.FC<InjectedFormProps<ProfileType, PropsType> & Prop
             <button>Save changes</button>
             <div className={s.profileInfo}>
                 <div>
-                    my id is: {createField<ProfileTypeKeys>(0, 0, "User id", "userId", [], Input)}
+                    my id is: {createField<ProfileTypeKeys>(null, 0, 0, "User id", "userId", [], Input)}
                     <div>
-                        about me: {createField<ProfileTypeKeys>(0, 0, "About me", "aboutMe", [], Textarea)}
+                        about me: {createField<ProfileTypeKeys>(null, 0, 0, "About me", "aboutMe", [], Textarea)}
                         <div>
-                            looking for a job: {createField<ProfileTypeKeys>(0, 0, "Looking for a job",
+                            looking for a job: {createField<ProfileTypeKeys>( null, 0, 0, "Looking for a job",
                             "lookingForAJob", [],
                             Input, {type: "checkbox"})}
                             <div>
                                 <div>
-                                    my programming skills: {createField<ProfileTypeKeys>(0, 0, "My skills",
+                                    my programming skills: {createField<ProfileTypeKeys>(null, 0, 0, "My skills",
                                     "lookingForAJobDescription",
                                     [], Textarea)}
                                 </div>
                                 <div>
-                                    my name is: {createField<ProfileTypeKeys>(0, 0, "Name", "fullName", [], Input)}
+                                    my name
+                                    is: {createField<ProfileTypeKeys>(null, 0, 0, "Name", "fullName", [], Input)}
                                 </div>
                                 <div className={s.contacts}>
                                     contacts: {Object.keys(props.profile.contacts).map(key => {
-                                    return <div key={key}>{key}: {createField(0, 0, key, "contacts." + key, [], Input)}
+                                    return <div
+                                        key={key}>{key}: {createField( null, 0, 0, key, "contacts." + key, [], Input)}
                                     </div>
                                 })}
                                 </div>

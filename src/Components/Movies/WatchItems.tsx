@@ -1,8 +1,8 @@
 import {connect} from "react-redux";
 import * as React from "react";
-import s from "./items.module.css"
+import s from "./WatchItems.module.css"
 import {NavLink} from "react-router-dom";
-import {getPeopleState, PeopleStateType} from "../../redux/starwarsReducer";
+import {getPeopleState, PeopleStateType} from "../../redux/starwarsReducerTest";
 import LoadingBlock from "../Preloader/Preloader";
 import movie from "../../pictures/movie.jpg";
 import {useEffect, useState} from "react";
@@ -72,7 +72,6 @@ const WatchItems: React.FC<MapStatePropsType & MapDispatchPropsType> = ({peopleS
 
 let mapStateToProps = (state: AppStateType) => ({
     peopleState: state.starWars.peopleState,
-    currentPage: state.starWars.currentPage
 })
 
 

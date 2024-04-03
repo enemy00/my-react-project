@@ -18,7 +18,6 @@ const MyPosts: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
         props.addPostAC(addPostMessage);
     }
 
-
     let state = props.profilePage;
     const postsElements = state.posts.map(p => <Posts message={p.message} likesCount={p.likesCount}/>)
 
@@ -46,7 +45,7 @@ const MyPostsForm: React.FC<InjectedFormProps<AddPostMessageFormType, PropsType>
         <form onSubmit={props.handleSubmit}>
             <div className={s.elementsBlock}>
                 {
-                    createField<AddPostMessageFormKeysType>(50, 3,"Write the message", "addPostMessage", [requireField, maxLength5], Textarea)}
+                    createField<AddPostMessageFormKeysType>(null, 50, 3, "Write the message", "addPostMessage", [requireField, maxLength5], Textarea)}
                 <button className={s.sendButton}>Send message</button>
             </div>
         </form>

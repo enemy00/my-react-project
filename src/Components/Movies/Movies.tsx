@@ -1,6 +1,6 @@
 import * as React from "react";
-import s from "./items.module.css";
-import {getPeopleFact, PeopleFactType} from "../../redux/starwarsReducer";
+import s from "./WatchItems.module.css";
+import {getPeopleFact, PeopleFactType} from "../../redux/starwarsReducerTest";
 import {compose} from "redux";
 import {withRouter, WithRouterProps} from "../../hocs/withRouter";
 import {connect} from "react-redux";
@@ -56,7 +56,7 @@ const Movies: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProp
                     <h3>Movie name: Star wars</h3>
                     <div className={s.imageAndLikes}>
                         <img src="https://w.forfun.com/fetch/f8/f8e73717be7ef8b98d69ec80802977b0.jpeg" alt="image"/>
-                        <div className={s.likes}>Liked:<span>{movieLikesCount}</span><img onClick={() => {
+                        <div className={s.likes}>Liked: <span>{movieLikesCount}</span><img onClick={() => {
                             setMovieLikesCount(prev => prev + 1)
                         }} src={likesIcon} alt="likes-icon"/></div>
                     </div>

@@ -40,11 +40,11 @@ const Users: React.FC<PropsType> = (props) => {
                         </NavLink>
                         <div>
                             {u.followed
-                                ? <button onClick={() => {
+                                ? <button className={s.followButton} onClick={() => {
                                     props.unfollowAC(u.id)
                                 }
                                 }>Unfollow</button>
-                                : <button onClick={() => {
+                                : <button className={s.unfollowButton} onClick={() => {
                                     props.followAC(u.id)
                                 }
                                 }>Follow</button>
