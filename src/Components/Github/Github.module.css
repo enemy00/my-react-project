@@ -67,6 +67,7 @@ hr {
     font-weight: lighter;
     font-size: 20px;
 }
+
 .userDetails {
     flex-grow: 1;
     margin-left: 40px;
@@ -82,6 +83,7 @@ hr {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
 .githubInfo {
     display: inline-block;
     width: 1200px;
@@ -96,7 +98,6 @@ hr {
     max-width: 200px;
     max-height: 200px;
     mix-blend-mode: darken;
-
 }
 
 .loginButton {

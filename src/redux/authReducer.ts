@@ -1,8 +1,6 @@
 import {CommonThunkType, InferActionsTypes} from "./redux-store";
 
 const SET_AUTH = "SET_AUTH";
-
-
 const initial = {
     isAuth: false,
     userId: null as number | null,

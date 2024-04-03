@@ -29,18 +29,16 @@ const Footer: React.FC<MapStatePropsType> = (props) => {
             </ul>
             <div>
                 <ul>
-                    <NavLink to="/starwars">
-                        <li>Star Wars</li>
-                    </NavLink>
                     <NavLink to="/watch">
                         <li>Watch</li>
-                    </NavLink>
-                    <NavLink to="/mainUsers">
-                        <li>Ph users</li>
                     </NavLink>
                     <NavLink to="/github">
                         <li>Github users</li>
                     </NavLink>
+                    <NavLink to="/phUsers">
+                        <li>Ph users</li>
+                    </NavLink>
+
                 </ul>
             </div>
         </div>
