@@ -29,7 +29,7 @@ const Users: React.FC<PropsType> = (props) => {
                 {pages.map(p => {
                         return <span onClick={() => {
                             props.changedPage(p)
-                        }} className={props.currentPage === p ? s.selectedPage : ""}>{p}</span>
+                        }}>{p}</span>
                     }
                 )}
             </div>
