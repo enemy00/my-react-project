@@ -8,5 +8,7 @@
 
 .errorBlock span {
     color: midnightblue;
-    font-weight: bold
+    font-weight: bold;
+    width: 300px;
+    display: inline-block;
 }

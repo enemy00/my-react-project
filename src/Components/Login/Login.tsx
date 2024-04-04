@@ -2,7 +2,7 @@ import * as React from "react"
 import s from "./Login.module.css"
 import {InjectedFormProps, reduxForm} from "redux-form";
 import {connect} from "react-redux";
-import {requireField} from "../../validators/validator";
+import {requiredCredentials} from "../../validators/validator";
 import {createField, Input} from "../../validators/FormsControls";
 import {loginMe} from "../../redux/authReducer";
 import {Navigate} from "react-router-dom";
@@ -48,16 +48,20 @@ const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
 
 const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType>> = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            Login: {createField<LoginFormValuesTypeKeys>(null, 0, 0,"Login", "loginText",
-                [requireField], Input)}
+        <form className={s.appForm} onSubmit={props.handleSubmit}>
+            <div> Login: {createField<LoginFormValuesTypeKeys>(null, null, null, "Login", "loginText",
+                [requiredCredentials], Input)}
+            </div>
             <hr/>
-            Password: {createField<LoginFormValuesTypeKeys>(null, 0, 0, "Password", "passwordText",
-                [requireField], Input, {type: "password"})}
-
+            <div>
+                Password: {createField<LoginFormValuesTypeKeys>(null, null, null, "Password", "passwordText",
+                [requiredCredentials], Input, {type: "password"})}
+            </div>
             <hr/>
-            Remember me: {createField<LoginFormValuesTypeKeys>(null,0, 0,undefined, "rememberMe",
-                [], Input, {type: "checkbox"})}
+            <div>
+                Remember me: {createField<LoginFormValuesTypeKeys>(null, null, null, undefined, "rememberMe",
+                [requiredCredentials], Input, {type: "checkbox"})}
+            </div>
             <button className={s.sendButton}>Send</button>
         </form>
     )

@@ -128,7 +128,7 @@ type GithubFormDataTypeKeys = Extract<keyof GithubFormDataType, string>
 const GithubForm: React.FC<InjectedFormProps<GithubFormDataType, PropsType> & PropsType> = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            {createField<GithubFormDataTypeKeys>(s.searchInput, 0, 0, "enemy00", "login", [requireField], Input)}
+            {createField<GithubFormDataTypeKeys>(s.searchInput, null, null, "enemy00", "login", [requireField], Input)}
             <button className={s.searchButton}>Find
             </button>
         </form>

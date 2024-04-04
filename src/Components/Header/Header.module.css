@@ -57,7 +57,7 @@ header a {
 .link a {
     color: #fff;
     text-decoration: none;
-    transition: color 1s;
+    transition: color 0.5s;
 }
 
 .link a:hover {

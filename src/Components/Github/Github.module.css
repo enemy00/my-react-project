@@ -137,9 +137,15 @@ hr {
     position: absolute;
 }
 
-.formBox {
+.githubForm {
+    display: inline-block;
     max-width: 500px;
-    height: 400px;
+}
+
+
+.formBox {
+    max-width: 550px;
+    height: 500px;
     position: relative;
     margin-left: 360px;
     background: navajowhite;

@@ -11,9 +11,14 @@ hr {
     position: absolute;
 }
 
+.appForm {
+    display: inline-block;
+    max-width: 500px;
+}
+
 .formBox {
-    width: 500px;
-    height: 400px;
+    max-width: 550px;
+    height: 500px;
     position: relative;
     margin-left: 360px;
     background: navajowhite;

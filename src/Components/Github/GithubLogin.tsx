@@ -8,6 +8,7 @@ import {Navigate} from "react-router-dom";
 import s from "./Github.module.css";
 import {compose} from "redux";
 import {withAuthRedirect} from "../../hocs/withAuthRedirect";
+import {requiredCredentials} from "../../validators/validator";
 
 type MapStatePropsType = {
     login: string | null
@@ -51,17 +52,17 @@ type LoginFormParamsType = {
 type PropsType = {}
 const GithubLoginForm: React.FC<InjectedFormProps<LoginFormParamsType, PropsType> & PropsType> = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            <span>
-                <div>Login: {createField(null, 0, 0, "Login", "myLogin", [], Input)}
+        <form className={s.githubForm} onSubmit={props.handleSubmit}>
+            <div>Login: {createField(null,null, null, "Login", "myLogin", [requiredCredentials], Input)}
+                <hr/>
+                <div>Password: {createField(s.passwordnull,null, null, "Password", "myPassword", [requiredCredentials], Input, {type: "password"})}
                     <hr/>
-                    <div>Password: {createField(null, 0, 0, "Password", "myPassword", [], Input, {type: "password"})}
-                        <hr/>
-                        Remember me: {createField(null, 0, 0, undefined, "rememberMe", [], Input, {type: "checkbox"})}
-                        <button className={s.sendButton}>Send</button>
-            </div>
+                    <div> Remember
+                        me: {createField(s.rememberMe, null,null, undefined, "rememberMe", [requiredCredentials], Input, {type: "checkbox"})}
+                    </div>
+                    <button className={s.sendButton}>Send</button>
                 </div>
-            </span>
+            </div>
         </form>
     )
 }
