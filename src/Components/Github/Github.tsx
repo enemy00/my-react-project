@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import * as React from "react"
-import axios from "axios";
 import s from "./Github.module.css";
 import github from "../../pictures/github.jpg";
 import {NavLink} from "react-router-dom";
@@ -8,34 +7,27 @@ import {connect} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
 import {compose} from "redux";
 import {withAuthRedirect} from "../../hocs/withAuthRedirect";
+import {getGithubUsers, getUserDetails} from "../../redux/githubReducer";
+import {SearchUserType, UserDetailsType} from "../../api/api";
+import userProfile from "../../pictures/userss.png";
+import {createField, Input} from "../../validators/FormsControls";
+import {requireField} from "../../validators/validator";
+import {InjectedFormProps, reduxForm} from "redux-form";
 
-type SearchUserType = {
-    login: string
-    id: number
-}
-type SearchResult = {
-    items: Array<SearchUserType>
-}
-
-type UserType = {
-    login: string
-    id: number
-    avatar_url: string
-    followers: number
-    following: number
-    twitter_username: null | string
-}
 
 type MapStatePropsType = {
     isRegistered: boolean
+    users: Array<SearchUserType>
+    userDetails: UserDetailsType
+    searchTerm: string
 }
-type MapDispatchPropsType = {}
+type MapDispatchPropsType = {
+    getUserDetails: (searchResult: string) => void
+    getGithubUsers: (searchResult: string) => void
+}
 const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const [selectedUser, setSelectedUser] = useState<null | SearchUserType>(null)
-    const [users, setUsers] = useState<Array<SearchUserType>>([])
-    const [tempSearch, setTempSearch] = useState("enemy00")
-    const [searchTerm, setSearchTerm] = useState("enemy00")
-    const [userDetails, setUserDetails] = useState<null | UserType>(null)
+
 
     useEffect(() => {
         if (selectedUser) {
@@ -43,21 +35,19 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
         }
     }, [selectedUser]);
     useEffect(() => {
-        axios.get<SearchResult>(`https://api.github.com/search/users?q=${searchTerm}`)
-            .then(res => {
-                setUsers(res.data.items)
-            })
-    }, [searchTerm]);
+        props.getGithubUsers(props.searchTerm)
+    }, [props.searchTerm]);
 
     useEffect(() => {
         if (!!selectedUser) {
-            axios.get<UserType>(`https://api.github.com/users/${selectedUser.login}`)
-                .then(res => {
-                    setUserDetails(res.data)
-                })
-
+            props.getUserDetails(selectedUser.login)
         }
     }, [selectedUser]);
+
+    const submittedData = (formData: GithubFormDataType) => {
+        const {login} = formData
+        props.getGithubUsers(login)
+    }
 
     return (
         <>
@@ -88,22 +78,14 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
             {props.isRegistered && <div className={s.container}>
                 <div>
                     <div className={s.searchContainer}>
-                        <input className={s.searchInput} placeholder="search"
-                               value={tempSearch}
-                               onChange={(e) => {
-                                   setTempSearch(e.currentTarget.value)
-                               }}/>
-                        <button className={s.searchButton} onClick={() => {
-                            setSearchTerm(tempSearch)
-                        }}>Find
-                        </button>
+                        <GithubReduxForm onSubmit={submittedData}/>
                     </div>
                     <ul className={s.usersContainer}>
-                        {users.map(u => <li key={u.id}
-                                            className={selectedUser === u ? s.selected : ""}
-                                            onClick={() => {
-                                                setSelectedUser(u)
-                                            }}>
+                        {props.users.slice(0, 20).map(u => <li key={u.id}
+                                                               className={selectedUser === u ? s.selected : ""}
+                                                               onClick={() => {
+                                                                   setSelectedUser(u)
+                                                               }}>
                                 {u.login}
                             </li>
                         )}
@@ -112,14 +94,20 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
                 <div className={s.userDetails}>
                     <h3>User's details:</h3>
                     <div className={s.userCard}>
-                        {userDetails && <div>
-                            <img src={userDetails.avatar_url} alt="user image"/>
+                        {props.userDetails && <div>
+                            <img src={props.userDetails.avatar_url ? props.userDetails.avatar_url : userProfile}
+                                 alt="user image"/>
                             <div>
-                                Login: {userDetails.login}, followers: {userDetails.followers}
-                                <div>tw username: {userDetails.twitter_username
-                                    ? userDetails.twitter_username
-                                    : "The person has no twitter username"},
-                                    following for: {userDetails.following + " users"}
+                                Login: {props.userDetails.login}
+                                <div>
+                                    followers: {props.userDetails.followers}
+                                </div>
+                                <div>Twitter username: {props.userDetails.twitter_username
+                                    ? props.userDetails.twitter_username
+                                    : "The person has no twitter username"}
+                                    <div>
+                                        following for: {props.userDetails.following + " users"}
+                                    </div>
                                 </div>
                             </div>
                         </div>}
@@ -130,9 +118,32 @@ const Github: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     )
 }
 
+type GithubFormDataType = {
+    login: string
+}
+type PropsType = {}
+
+
+type GithubFormDataTypeKeys = Extract<keyof GithubFormDataType, string>
+const GithubForm: React.FC<InjectedFormProps<GithubFormDataType, PropsType> & PropsType> = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            {createField<GithubFormDataTypeKeys>(s.searchInput, 0, 0, "enemy00", "login", [requireField], Input)}
+            <button className={s.searchButton}>Find
+            </button>
+        </form>
+    )
+}
+
+const GithubReduxForm = reduxForm<GithubFormDataType, PropsType>({form: "github-search-form"})(GithubForm)
+
+
 const mapState = (state: AppStateType) => ({
-    isRegistered: state.github.isRegistered
+    isRegistered: state.github.isRegistered,
+    users: state.github.githubUsers,
+    userDetails: state.github.githubUserDetails,
+    searchTerm: state.github.searchTerm,
 })
 export default compose<React.ComponentType>(
     withAuthRedirect,
-    connect(mapState, {}))(Github);
+    connect(mapState, {getUserDetails, getGithubUsers}))(Github);

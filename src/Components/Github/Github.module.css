@@ -11,13 +11,12 @@ hr {
 }
 
 .selected {
-    border: 1px solid black;
-    border-radius: 10px;
     margin-top: 5px;
     max-width: 150px;
     max-height: 50px;
     display: inline-block;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: cornflowerblue;
 }
 
 
@@ -42,14 +41,23 @@ hr {
     display: inline-block;
     max-width: 150px;
     border-left: medium solid gray;
+    cursor: pointer;
+
 }
 
 .usersContainer li {
     list-style: none;
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
+    border-radius: 15px;
+    border: none;
 }
 
+.usersContainer li:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    display: inline-block;
+    margin-top: 10px;
+}
 
 .githubInfoText p {
     color: black;
