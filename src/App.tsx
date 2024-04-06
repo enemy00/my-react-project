@@ -2,7 +2,6 @@ import * as React from "react";
 import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import Login from "./Components/Login/Login";
 import Movies from "./Components/Movies/Movies";
 import Footer from "./Footer/Footer";
 import {compose} from "redux";
@@ -22,6 +21,7 @@ import WatchItems from "./Components/Movies/WatchItems";
 import PhUsersContainer from "./Components/PhItems/PhUsersContainer";
 import UsersContainerWithHooks from "./Components/Users/UsersContainerWithHooks";
 import HeaderContainerWithHooks from "./Components/Header/HeaderContainerWithHooks";
+import LoginContainer from "./Components/Login/LoginContainer";
 
 type MapStatePropsType = {
     initialized: boolean
@@ -56,7 +56,7 @@ const App: React.FC<MapStatePropsType & MapDispatchPropsType & WithRouterProps> 
                     <Route path="/" element={<Navigate to={"/profile"}/>}/>
                     <Route path="/dialogs" element={<SuspendedDialogs/>}/>
                     <Route path="/dialogs/convo/:userId?" element={<Conversations/>}/>
-                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/login" element={<LoginContainer/>}/>
                     <Route path="/users" element={<UsersContainerWithHooks/>}/>
                     <Route path="/phUsers" element={<PhUsersContainer/>}/>
                     <Route path="/watch" element={<WatchItems/>}/>

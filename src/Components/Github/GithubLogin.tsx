@@ -55,10 +55,10 @@ const GithubLoginForm: React.FC<InjectedFormProps<LoginFormParamsType, PropsType
         <form className={s.githubForm} onSubmit={props.handleSubmit}>
             <div>Login: {createField(null,null, null, "Login", "myLogin", [requiredCredentials], Input)}
                 <hr/>
-                <div>Password: {createField(s.passwordnull,null, null, "Password", "myPassword", [requiredCredentials], Input, {type: "password"})}
+                <div>Password: {createField(null,null, null, "Password", "myPassword", [requiredCredentials], Input, {type: "password"})}
                     <hr/>
                     <div> Remember
-                        me: {createField(s.rememberMe, null,null, undefined, "rememberMe", [requiredCredentials], Input, {type: "checkbox"})}
+                        me: {createField(null, null,null, undefined, "rememberMe", [requiredCredentials], Input, {type: "checkbox"})}
                     </div>
                     <button className={s.sendButton}>Send</button>
                 </div>

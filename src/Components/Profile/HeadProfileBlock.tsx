@@ -8,7 +8,7 @@ type PropsType = {
 const HeadProfileBlock: React.FC<PropsType> = (props) => {
     const date = new Date()
     return <>
-        <div className={s.alwaysProfileBlock}>
+        <div>
             <div className={s.date}>{date.toDateString()}</div>
         </div>
     </>
