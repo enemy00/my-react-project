@@ -1,8 +1,9 @@
 import * as React from "react";
 import usersPhoto from "./../../pictures/users.png";
 import {NavLink} from "react-router-dom";
-import {UsersType} from "../../redux/usersReducer";
+import {FilterType, UsersType} from "../../redux/usersReducer";
 import s from "./Users.module.css";
+import UsersSearch from "./UsersSearch";
 
 type PropsType = {
     usersQuantity: number
@@ -12,6 +13,7 @@ type PropsType = {
     currentPage: number
     followAC: (userId: number) => void
     unfollowAC: (userId: number) => void
+    filterChanged: (filter: FilterType) => void
 }
 const Users: React.FC<PropsType> = (props) => {
 
@@ -32,6 +34,9 @@ const Users: React.FC<PropsType> = (props) => {
                         }}>{p}</span>
                     }
                 )}
+            </div>
+            <div className={s.searcher}><strong>Look for users by the searcher</strong>
+                <UsersSearch filterChanged={props.filterChanged}/>
             </div>
             {
                 props.users.map(u => <div className={s.users} key={u.id}>
@@ -62,5 +67,6 @@ const Users: React.FC<PropsType> = (props) => {
         </div>
     </>
 }
+
 
 export default Users;

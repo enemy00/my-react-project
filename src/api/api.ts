@@ -17,8 +17,8 @@ type UsersResponseDataType = {
 
 
 export const usersAPI = {
-    async getUsers(currentPage: number, pageSize: number) {
-        return instance.get<UsersResponseDataType>(`users?page=${currentPage}&count=${pageSize}`)
+    async getUsers(currentPage: number, pageSize: number, term: string, friend: null | boolean = null) {
+        return instance.get<UsersResponseDataType>(`users?page=${currentPage}&count=${pageSize}&term=${term}` + (friend === null ? "" : `&friend=${friend}`))
             .then(res => res.data)
     },
 }

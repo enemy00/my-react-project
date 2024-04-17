@@ -2,7 +2,7 @@ import * as React from "react";
 import Users from "./Users";
 import {connect} from "react-redux";
 import {
-    actions,
+    actions, FilterType,
     getUsersTC, UsersType
 } from "../../redux/usersReducer";
 import LoadingBlock from "../Preloader/Preloader";
@@ -15,9 +15,10 @@ type MapStatePropsType = {
     usersQuantity: number
     currentPage: number
     isFetching: boolean
+    filter: FilterType
 }
 type MapDispatchPropsType = {
-    getUsersTC: (currentPage: number, pageSize: number) => void
+    getUsersTC: (currentPage: number, pageSize: number, filter: FilterType) => void
     followAC: (userId: number) => void
     unfollowAC: (userId: number) => void
 }
@@ -25,19 +26,23 @@ type MapDispatchPropsType = {
 class UsersContainer extends React.Component<MapStatePropsType & MapDispatchPropsType> {
 
     componentDidMount() {
-        this.props.getUsersTC(this.props.currentPage, this.props.pageSize)
+        this.props.getUsersTC(this.props.currentPage, this.props.pageSize, this.props.filter)
     }
 
     changedPage = (page: number) => {
-        this.props.getUsersTC(page, this.props.pageSize)
-
+        const {pageSize, filter} = this.props
+        this.props.getUsersTC(page, pageSize, filter)
+    }
+    filterChanged = (filter: FilterType) => {
+        const {pageSize} = this.props
+        this.props.getUsersTC(1, pageSize, filter)
     }
 
     render() {
         return <>
             {this.props.isFetching ? <LoadingBlock/>
                 : null}
-            <Users {...this.props} changedPage={this.changedPage}/>
+            <Users {...this.props} changedPage={this.changedPage} filterChanged={this.filterChanged}/>
         </>
     }
 }
@@ -48,6 +53,7 @@ const mapStateToProps = (state: AppStateType) => ({
     usersQuantity: state.usersPage.usersQuantity,
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
+    filter: state.usersPage.filter,
 })
 export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps, {
     followAC: actions.followAC, unfollowAC: actions.unfollowAC, getUsersTC

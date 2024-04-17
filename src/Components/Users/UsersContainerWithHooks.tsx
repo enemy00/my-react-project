@@ -2,7 +2,7 @@ import * as React from "react";
 import Users from "./Users";
 import {connect} from "react-redux";
 import {
-    actions,
+    actions, FilterType,
     getUsersTC, UsersType
 } from "../../redux/usersReducer";
 import LoadingBlock from "../Preloader/Preloader";
@@ -16,26 +16,32 @@ type MapStatePropsType = {
     usersQuantity: number
     currentPage: number
     isFetching: boolean
+    filter: FilterType
 }
 type MapDispatchPropsType = {
-    getUsersTC: (currentPage: number, pageSize: number) => void
+    getUsersTC: (currentPage: number, pageSize: number, filter: FilterType) => void
     followAC: (userId: number) => void
     unfollowAC: (userId: number) => void
 }
 
 const UsersContainerWithHooks: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     useEffect(() => {
-        props.getUsersTC(props.currentPage, props.pageSize)
+        props.getUsersTC(props.currentPage, props.pageSize, props.filter)
     }, []);
     const changedPage = (page: number) => {
-        props.getUsersTC(page, props.pageSize)
+        const {pageSize, filter} = props
+        props.getUsersTC(page, pageSize, filter)
 
+    }
+    const filterChanged = (filter: FilterType) => {
+        const {pageSize} = props
+        props.getUsersTC(1, pageSize, filter)
     }
 
     return <>
         {props.isFetching ? <LoadingBlock/>
             : null}
-        <Users {...props} changedPage={changedPage}/>
+        <Users {...props} changedPage={changedPage} filterChanged={filterChanged}/>
     </>
 
 }
@@ -46,6 +52,7 @@ const mapStateToProps = (state: AppStateType) => ({
     usersQuantity: state.usersPage.usersQuantity,
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
+    filter: state.usersPage.filter,
 })
 export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps, {
     followAC: actions.followAC, unfollowAC: actions.unfollowAC, getUsersTC

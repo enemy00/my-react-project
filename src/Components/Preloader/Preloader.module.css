@@ -4,3 +4,6 @@
     right: 880px;
     mix-blend-mode: darken;
 }
+.loaderBlock img {
+    max-width: 150px;
+}

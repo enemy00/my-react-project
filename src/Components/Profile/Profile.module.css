@@ -18,6 +18,10 @@ textarea {
     margin: 10px
 }
 
+.hideDate {
+    display: none;
+}
+
 
 .changeProfilePhoto {
     display: inline-block;
